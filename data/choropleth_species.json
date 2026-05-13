@@ -1,0 +1,75 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Threatened Species Across Australian States",
+    "subtitle": "Number of threatened species recorded per state — darker means more species at risk",
+    "fontSize": 16,
+    "fontWeight": "bold",
+    "subtitleFontSize": 12,
+    "anchor": "start",
+    "font": "Source Sans 3",
+    "subtitleFont": "Source Sans 3"
+  },
+  "width": 700,
+  "height": 450,
+  "projection": {"type": "mercator"},
+  "layer": [
+    {
+      "data": {
+        "url": "data/australia-states.json",
+        "format": {"type": "json", "property": "features"}
+      },
+      "transform": [
+        {
+          "lookup": "properties.STATE_NAME",
+          "from": {
+            "data": {"url": "data/epbc_state_counts.csv"},
+            "key": "state",
+            "fields": ["count"]
+          }
+        }
+      ],
+      "mark": {"type": "geoshape", "stroke": "#fff", "strokeWidth": 1.5},
+      "encoding": {
+        "color": {
+          "field": "count",
+          "type": "quantitative",
+          "scale": {
+            "scheme": "oranges",
+            "domain": [0, 760]
+          },
+          "legend": {
+            "title": "Threatened Species",
+            "orient": "bottom-right",
+            "gradientLength": 120
+          }
+        },
+        "tooltip": [
+          {"field": "properties.STATE_NAME", "type": "nominal", "title": "State"},
+          {"field": "count", "type": "quantitative", "title": "Threatened Species"}
+        ]
+      }
+    },
+    {
+      "data": {
+        "values": [
+          {"label": "NSW has the most\nthreatened species (760)", "longitude": 147.5, "latitude": -33},
+          {"label": "ACT: 71 species\n(too small to see)", "longitude": 152, "latitude": -37.5}
+        ]
+      },
+      "mark": {
+        "type": "text",
+        "fontSize": 11,
+        "font": "Source Sans 3",
+        "color": "#1A1A18",
+        "fontWeight": "bold",
+        "align": "left"
+      },
+      "encoding": {
+        "longitude": {"field": "longitude", "type": "quantitative"},
+        "latitude": {"field": "latitude", "type": "quantitative"},
+        "text": {"field": "label", "type": "nominal"}
+      }
+    }
+  ]
+}

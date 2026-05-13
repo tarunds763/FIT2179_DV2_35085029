@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Australia's Silent Invasion</title>
+  <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- SECTION 1: Paradise under siege -->
+  <section id="section1">
+    <h1>Australia's Silent Invasion</h1>
+    <p class="subtitle">The continent with the world's most unique wildlife — and its worst extinction record</p>
+    <div id="vis1"></div>   <!-- ← CHART GOES HERE -->
+  </section>
+
+  <!-- SECTION 2: The culprits -->
+  <section id="section2">
+    <h2>The Culprits</h2>
+  </section>
+
+  <!-- SECTION 3: The cost -->
+  <section id="section3">
+    <h2>The True Cost</h2>
+  </section>
+
+  <!-- SECTION 4: Fighting back -->
+  <section id="section4">
+    <h2>Fighting Back</h2>
+  </section>
+
+  <footer>
+    <p>Author: Your Name · Monash University FIT2179 · May 2026</p>
+    <p>Data: Atlas of Living Australia · InvaCost (Figshare) · EPBC Act (data.gov.au)</p>
+  </footer>
+
+  <script>
+  vegaEmbed('#vis1', 'data/choropleth_species.json')
+    .catch(console.error);
+  </script>
+
+</body>
+</html>
