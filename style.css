@@ -1,0 +1,139 @@
+/* ── ADD THIS TO THE BOTTOM OF YOUR style.css ── */
+
+/* Header */
+header {
+  padding: 4rem 0 2rem;
+  border-bottom: 2px solid #1A1A18;
+  margin-bottom: 0;
+}
+
+.eyebrow {
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #D85A30;
+  margin-bottom: 0.5rem;
+}
+
+/* Section tag e.g. "Part 1" */
+.section-tag {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #D85A30;
+  margin-bottom: 0.4rem;
+}
+
+/* Narrative text blocks */
+.narrative {
+  max-width: 680px;
+  margin-bottom: 2rem;
+}
+
+.narrative p {
+  font-size: 1rem;
+  line-height: 1.75;
+  color: #2A2A28;
+  margin-bottom: 1rem;
+  max-width: 65ch;
+}
+
+.narrative strong {
+  color: #1A1A18;
+  font-weight: 600;
+}
+
+/* Short intro before a chart */
+.chart-intro {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: #4A4A42;
+  max-width: 65ch;
+  margin: 1.5rem 0 1rem;
+}
+
+/* Bridge sentence between sections */
+.bridge {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: #4A4A42;
+  max-width: 65ch;
+  margin: 1.5rem 0 0;
+  font-style: italic;
+  border-left: 3px solid #D85A30;
+  padding-left: 1rem;
+}
+
+/* Stats hero panel (V2) */
+.stats-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+
+.stat-card {
+  background: #1A1A18;
+  color: #FAFAF7;
+  border-radius: 8px;
+  padding: 1.5rem;
+}
+
+.stat-number {
+  font-family: 'Playfair Display', serif;
+  font-size: 3rem;
+  font-weight: 700;
+  color: #F0997B;
+  line-height: 1;
+  margin-bottom: 0.5rem;
+}
+
+.stat-unit {
+  font-size: 1.8rem;
+}
+
+.stat-label {
+  font-size: 0.85rem;
+  line-height: 1.5;
+  color: #C8C6BE;
+}
+
+/* Closing narrative in Section 4 */
+.closing-narrative {
+  max-width: 680px;
+  margin-top: 2rem;
+  padding: 1.5rem;
+  background: #1A1A18;
+  border-radius: 8px;
+}
+
+.closing-narrative p {
+  font-size: 1rem;
+  line-height: 1.75;
+  color: #C8C6BE;
+  margin-bottom: 1rem;
+  max-width: 65ch;
+}
+
+.closing-narrative p:last-child {
+  margin-bottom: 0;
+}
+
+.closing-narrative strong {
+  color: #F0997B;
+}
+
+/* Footer */
+footer {
+  margin-top: 4rem;
+  padding: 2rem 0;
+  border-top: 1px solid #E0DED8;
+}
+
+.footer-inner p {
+  font-size: 0.8rem;
+  color: #888880;
+  line-height: 2;
+}
