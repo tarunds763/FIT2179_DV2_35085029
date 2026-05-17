@@ -1,0 +1,24 @@
+class_label,status,count
+Amphibians,Vulnerable,16
+Amphibians,Endangered,15
+Amphibians,Critically Endangered,18
+Amphibians,Extinct,4
+Birds,Vulnerable,77
+Birds,Endangered,69
+Birds,Critically Endangered,18
+Birds,Extinct,22
+Fish,Vulnerable,19
+Fish,Endangered,27
+Fish,Critically Endangered,26
+Fish,Extinct,1
+Insects,Vulnerable,5
+Insects,Endangered,10
+Insects,Critically Endangered,13
+Mammals,Vulnerable,57
+Mammals,Endangered,47
+Mammals,Critically Endangered,9
+Mammals,Extinct,39
+Reptiles,Vulnerable,34
+Reptiles,Endangered,40
+Reptiles,Critically Endangered,27
+Reptiles,Extinct,1

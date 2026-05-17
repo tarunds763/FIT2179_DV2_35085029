@@ -1,0 +1,29 @@
+program,species,period,period_order,index,label_y,outcome,years
+"Kangaroo Island:
+Feral Cat",Feral Cat,Before,0,100,100,Eradicated,2019–2023
+"Kangaroo Island:
+Feral Cat",Feral Cat,After,1,0,10,Eradicated,2019–2023
+"Lord Howe Island:
+Rodent",Black Rat,Before,0,100,100,Eradicated,2019–2021
+"Lord Howe Island:
+Rodent",Black Rat,After,1,0,0,Eradicated,2019–2021
+"Macquarie Island:
+Rabbit",European Rabbit,Before,0,100,100,Eradicated,2006–2014
+"Macquarie Island:
+Rabbit",European Rabbit,After,1,0,-10,Eradicated,2006–2014
+"National
+Cat Management.",Feral Cat,Before,0,100,100,Reduced,2015–2023
+"National
+Cat Management.",Feral Cat,After,1,77,77,Reduced,2015–2023
+"Rabbit
+Biocontrol",European Rabbit,Before,0,100,100,Reduced,1996–2023
+"Rabbit
+Biocontrol",European Rabbit,After,1,33,40,Reduced,1996–2023
+"WA Fox
+Control",Red Fox,Before,0,100,100,Reduced,2000–2023
+"WA Fox
+Control",Red Fox,After,1,33,28,Reduced,2000–2023
+"Cane Toad
+Research",Cane Toad,Before,0,100,100,Ongoing,2010–2023
+"Cane Toad
+Research",Cane Toad,After,1,90,90,Ongoing,2010–2023

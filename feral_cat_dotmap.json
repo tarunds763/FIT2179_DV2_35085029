@@ -1,0 +1,74 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Feral Cats: A Continent-Wide Crisis",
+    "subtitle": "Each dot is a confirmed sighting — 10,000 records from the Atlas of Living Australia",
+    "fontSize": 16,
+    "fontWeight": "bold",
+    "subtitleFontSize": 12,
+    "anchor": "start",
+    "font": "Source Sans 3",
+    "subtitleFont": "Source Sans 3"
+  },
+  "width": 700,
+  "height": 450,
+  "projection": {"type": "mercator"},
+  "layer": [
+    {
+      "data": {
+        "url": "data/australia-states.json"
+      },
+      "mark": {
+        "type": "geoshape",
+        "fill": "#F0EBE0",
+        "stroke": "#C8C4B6",
+        "strokeWidth": 0.8
+      }
+    },
+    {
+      "data": {"url": "data/feral_cat_trimmed.csv"},
+      "mark": {
+        "type": "circle",
+        "opacity": 0.35,
+        "size": 8,
+        "color": "#D85A30"
+      },
+      "encoding": {
+        "longitude": {"field": "decimalLongitude", "type": "quantitative"},
+        "latitude":  {"field": "decimalLatitude",  "type": "quantitative"},
+        "tooltip": [
+          {"field": "stateProvince", "type": "nominal",      "title": "State"},
+          {"field": "year",          "type": "quantitative", "title": "Year Recorded"}
+        ]
+      }
+    },
+    {
+      "data": {
+        "values": [
+          {
+            "label": "No state is untouched.",
+            "lon": 121.5,
+            "lat": -33.5
+          }
+        ]
+      },
+      "mark": {
+        "type": "text",
+        "fontSize": 12,
+        "fontWeight": "bold",
+        "font": "Source Sans 3",
+        "color": "#7B1D00",
+        "align": "left"
+      },
+      "encoding": {
+        "longitude": {"field": "lon", "type": "quantitative"},
+        "latitude":  {"field": "lat", "type": "quantitative"},
+        "text":      {"field": "label", "type": "nominal"}
+      }
+    }
+  ],
+  "config": {
+    "view": {"stroke": null},
+    "font": "Source Sans 3"
+  }
+}

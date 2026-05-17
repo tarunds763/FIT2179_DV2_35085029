@@ -1,43 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Australia's Silent Invasion</title>
+  <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.3/build/pure-min.css"
+  integrity="sha384-cg6SkqEOCV1NbJoCu11+bm0NvBRc8IYLRGXkmNrqUBfTjmMYwNKPWBTIKyw9mHNJ"
+  crossorigin="anonymous">
+</head>
 <body>
- 
-  <!-- ── HEADER ───────────────────────────────────────────── -->
+<div class="page">
+
   <header>
     <p class="eyebrow">Australia's Wildlife Crisis</p>
     <h1>The Silent Invasion</h1>
-    <p class="subtitle">
-      Since 1788, humans have unleashed hundreds of foreign species
-      across Australia. The damage is greater than most Australians
-      will ever know.
-    </p>
+    <p class="subtitle">Since 1788, humans have unleashed hundreds of foreign species
+    across Australia. The damage is greater than most Australians will ever know.</p>
   </header>
- 
- 
-  <!-- ── SECTION 1: Paradise under siege ──────────────────── -->
+
+  
   <section id="section1">
- 
     <div class="section-tag">Part 1</div>
     <h2>A Paradise with a Problem</h2>
- 
     <div class="narrative">
-      <p>
-        Australia is one of the most biologically extraordinary places
-        on Earth. Around <strong>80% of its mammals, reptiles, and
-        flowering plants exist nowhere else in the world.</strong>
-        Nowhere else will you find a platypus, a quoll, or a bilby.
-        This continent evolved in isolation for 50 million years —
-        producing life unlike anything seen elsewhere.
-      </p>
-      <p>
-        Yet today, Australia holds a record no country wants —
-        the worst modern mammal extinction rate on the planet.
-        Since European settlement, more Australian mammals have
-        vanished forever than on any other continent. The question
-        is not whether Australia is losing its wildlife.
-        The question is why.
-      </p>
+      <p>Australia is one of the most biologically extraordinary places
+      on Earth. Around <strong>80% of its mammals, reptiles, and
+      flowering plants exist nowhere else in the world.</strong></p>
+      <p>Yet today, Australia holds a record no country wants —
+      the worst modern mammal extinction rate on the planet.</p>
     </div>
- 
-    <!-- V2: Hero stats panel -->
+
+    
     <div class="stats-row">
       <div class="stat-card">
         <div class="stat-number">1.5<span class="stat-unit">B</span></div>
@@ -52,247 +50,119 @@
         <div class="stat-label">Economic losses caused by invasive species since 1960</div>
       </div>
     </div>
- 
-    <p class="chart-intro">
-      The crisis is not evenly spread. Some states carry a
-      disproportionate burden — shaped by their size, diversity
-      of habitat, and proximity to the original points of introduction.
-    </p>
- 
-    <!-- V1: Choropleth map -->
+
+    <p class="chart-intro">The crisis is not evenly spread. Some states carry
+    a disproportionate burden.</p>
+
+    
     <div id="vis1"></div>
- 
-    <p class="bridge">
-      The map tells us where the problem is concentrated.
-      But to understand how it got this bad, we need to go back
-      to where it all began.
-    </p>
- 
+
+    <p class="bridge">The map tells us where the problem is concentrated.
+    But to understand how it got this bad, we need to go back to where
+    it all began.</p>
   </section>
- 
- 
-  <!-- ── SECTION 2: The culprits ───────────────────────────── -->
+
+  
   <section id="section2">
- 
     <div class="section-tag">Part 2</div>
     <h2>The Culprits: A 200-Year Invasion</h2>
- 
     <div class="narrative">
-      <p>
-        None of this happened overnight. The invasion of Australia's
-        ecosystems began the moment the First Fleet arrived in 1788 —
-        and it has never stopped. Cats came as pets. Rabbits were
-        released for sport hunting. Foxes followed for the thrill of
-        the chase. Cane toads were deliberately introduced in 1935
-        to control beetles on sugar cane farms. Nearly every
-        introduction was intentional. Nearly every one became
-        a disaster.
-      </p>
-      <p>
-        Over two centuries, these decisions compounded into a
-        continental-scale ecological emergency that most Australians
-        still don't fully grasp.
-      </p>
+      <p>None of this happened overnight. The invasion began the moment
+      the First Fleet arrived in 1788 — and it has never stopped.</p>
+      <p>Over two centuries, these decisions compounded into a
+      continental-scale ecological emergency.</p>
     </div>
- 
-    <!-- V3: Invasion timeline -->
+
+    
     <div id="vis3"></div>
- 
-    <p class="chart-intro">
-      Of all the invaders, none has been more devastating than the
-      feral cat. Originally brought as a domestic companion, it has
-      spread to every corner of the continent — from the tropical
-      north to the arid centre to the cool south. There is no
-      region of Australia the feral cat has not reached.
-    </p>
- 
-    <!-- V4: Dot map feral cats -->
+
+    <p class="chart-intro">Of all the invaders, none has been more
+    devastating than the feral cat.</p>
+
+    
     <div id="vis4"></div>
- 
-    <p class="chart-intro">
-      And cats are not alone. Four species in particular have
-      blanketed the continent in their own way — each arriving
-      for a different reason, each now impossible to remove.
-    </p>
- 
-    <!-- V5: Small multiples -->
+
+    
     <div id="vis5"></div>
- 
-    <p class="bridge">
-      The spread is staggering. But what does it actually cost —
-      in animals lost, and in dollars spent?
-    </p>
- 
+
+    <p class="bridge">The spread is staggering. But what does it actually
+    cost — in animals lost, and in dollars spent?</p>
   </section>
- 
- 
-  <!-- ── SECTION 3: The true cost ──────────────────────────── -->
+
+  
   <section id="section3">
- 
     <div class="section-tag">Part 3</div>
     <h2>The True Cost: What We Have Lost</h2>
- 
     <div class="narrative">
-      <p>
-        Most Australians think of invasive species as an environmental
-        issue — a concern for scientists and conservationists.
-        In reality, it is also one of the most expensive problems
-        this country faces. Billions of dollars in agricultural
-        damage, billions more in failed eradication programs,
-        and an ecological debt that simply cannot be repaid.
-      </p>
-      <p>
-        Behind every dollar figure is a species pushed closer
-        to the edge. The feral cat alone is implicated in the
-        extinction of at least 20 native mammal species and
-        threatens hundreds more. This is not a distant, abstract
-        crisis — it is happening in national parks, in backyards,
-        and in the bush outside every Australian city right now.
-      </p>
+      <p>Most Australians think of invasive species as an environmental
+      issue. In reality, it is also one of the most expensive problems
+      this country faces.</p>
     </div>
- 
-    <!-- V6: Bubble chart -->
+
+    <p class="chart-intro">Feral cats alone cost more per year than any
+    other invasive species tracked in Australia.</p>
+
     <div id="vis6"></div>
- 
-    <p class="chart-intro">
-      When ranked by total economic damage, the scale becomes
-      visceral. Feral cats top the list — not because they are
-      the most expensive to manage, but because the ecological
-      destruction they cause translates directly into losses
-      for farmers, land managers, and governments alike.
-    </p>
- 
-    <!-- V7: Bar chart top 10 -->
+
     <div id="vis7"></div>
- 
-    <p class="chart-intro">
-      The ecological damage follows a clear pattern. Invasive
-      predators — cats and foxes — overwhelmingly threaten
-      ground-dwelling mammals and nesting birds. Herbivores
-      like rabbits and goats destroy the vegetation that
-      every other species depends on. Each invader carves
-      out its own trail of destruction.
-    </p>
- 
-    <!-- V8: Arc diagram -->
+
     <div id="vis8"></div>
- 
-    <p class="chart-intro">
-      Invasive species are not just one threat among many.
-      Across every class of Australian animal, they rank as
-      the single greatest driver of decline — ahead of habitat
-      clearing, ahead of drought, ahead of fire.
-    </p>
- 
-    <!-- V9: Stacked bar -->
+
     <div id="vis9"></div>
- 
-    <p class="chart-intro">
-      The damage is not uniform across the country. Some states
-      face a far more concentrated set of threats than others —
-      and some invasive species are far more destructive in
-      certain regions than they are elsewhere.
-    </p>
- 
-    <!-- V10: Heatmap -->
-    <div id="vis10"></div>
- 
-    <p class="bridge">
-      Australia is not standing still. Over the past four decades,
-      the country has launched some of the most ambitious
-      pest control programs in the world. Some have worked.
-      Others show just how hard this fight really is.
-    </p>
- 
+    
   </section>
- 
- 
-  <!-- ── SECTION 4: Fighting back ──────────────────────────── -->
+
+  
   <section id="section4">
- 
     <div class="section-tag">Part 4</div>
     <h2>Fighting Back: Can Australia Win?</h2>
- 
-    <div class="narrative">
-      <p>
-        The story of invasive species in Australia is not only
-        one of loss. It is also one of hard-won, painstaking
-        progress. Myxomatosis cut rabbit populations by 90%
-        within years of its release. Island eradication programs
-        have given dozens of native species a second chance.
-        The bilby, once thought headed for extinction, now
-        breeds in fenced sanctuaries across three states.
-      </p>
-      <p>
-        But for every success, the scale of what remains is
-        sobering. Feral cats alone occupy 99.8% of the Australian
-        continent. No single program, no matter how well funded,
-        has come close to reversing that.
-      </p>
-    </div>
- 
-    <!-- V11: Slope chart -->
+
+    <div id="vis10"></div>
+
     <div id="vis11"></div>
- 
-    <p class="chart-intro">
-      Active management programs are concentrated in the
-      south-east and in island territories — where populations
-      are smaller and eradication is actually achievable.
-      The vast interior remains largely unmanaged.
-    </p>
- 
-    <!-- V12: Choropleth control programs map -->
-    <div id="vis12"></div>
- 
-    <div class="closing-narrative">
-      <p>
-        Australia's wildlife crisis is not inevitable — but it is
-        urgent. Every year of inaction means more species lost,
-        more dollars spent on damage that could have been prevented,
-        and more ground conceded to animals that were never meant
-        to be here.
-      </p>
-      <p>
-        The data is clear. The science is settled.
-        What remains is the will to act — and the awareness
-        that this is everyone's problem, not just a concern
-        for specialists and conservationists.
-        <strong>Australia's wildlife belongs to all of us.
-        So does the responsibility to protect it.</strong>
-      </p>
+
+    <div class="narrative">
+      <p>The story of invasive species in Australia is not only one
+      of loss. It is also one of hard-won, painstaking progress.</p>
     </div>
- 
+    
   </section>
- 
- 
-  <!-- ── FOOTER ────────────────────────────────────────────── -->
+
   <footer>
     <div class="footer-inner">
-      <p><strong>Author:</strong> Your Name &nbsp;·&nbsp; Monash University FIT2179 &nbsp;·&nbsp; May 2026</p>
-      <p>
-        <strong>Data sources:</strong>
-        Atlas of Living Australia (ala.org.au) &nbsp;·&nbsp;
-        InvaCost database, Figshare (doi.org/10.6084/m9.figshare.12668570) &nbsp;·&nbsp;
-        EPBC Threatened Species State Lists, data.gov.au
-      </p>
+      <p><strong>Author:</strong> Your Name · Monash University FIT2179 · May 2026</p>
+      <p><strong>Data:</strong> Atlas of Living Australia (ala.org.au) ·
+      InvaCost (doi.org/10.6084/m9.figshare.12668570) ·
+      EPBC Act (data.gov.au)</p>
       <p>AI tools used for grammar and text refinement.</p>
     </div>
   </footer>
- 
- 
+
+  
   <script>
-    // Charts — add vegaEmbed calls here as you build each one
-    vegaEmbed('#vis1', 'data/choropleth_species.json').catch(console.error);
-    vegaEmbed('#vis3', 'data/invasion_timeline.json').catch(console.error);
-    // vegaEmbed('#vis4', 'data/feral_cat_map.json').catch(console.error);
-    // vegaEmbed('#vis5', 'data/small_multiples.json').catch(console.error);
-    // vegaEmbed('#vis6', 'data/bubble_chart.json').catch(console.error);
-    // vegaEmbed('#vis7', 'data/bar_chart.json').catch(console.error);
-    // vegaEmbed('#vis8', 'data/arc_diagram.json').catch(console.error);
-    // vegaEmbed('#vis9', 'data/stacked_bar.json').catch(console.error);
-    // vegaEmbed('#vis10', 'data/heatmap.json').catch(console.error);
-    // vegaEmbed('#vis11', 'data/slope_chart.json').catch(console.error);
-    // vegaEmbed('#vis12', 'data/choropleth_control.json').catch(console.error);
+    var specVis1 = "./choropleth_species.json";
+    var specVis3 = "./invasion_timeline.json";
+    var specVis4 = "./feral_cat_dotmap.json";
+    var specVis5 = "./small_multiples.json";
+    var specVis6 = "./bubble_chart.json";
+    var specVis7 = "./stacked_bar.json";
+    var specVis8 = "./arc_diagram.json";
+    var specVis9 = "./heatmap.json";
+    var specVis10 = "./slope_chart.json";
+    var specVis11 = "./management_map.json";
+
+
+    vegaEmbed('#vis1', specVis1, { "actions": false, "renderer": "svg" }).catch(console.error);
+    vegaEmbed('#vis3', specVis3, { "actions": false, "renderer": "svg" }).catch(console.error);
+    vegaEmbed('#vis4', specVis4, { "actions": false, "renderer": "svg" }).catch(console.error);
+    vegaEmbed('#vis5', specVis5, { "actions": false, "renderer": "svg" }).catch(console.error);
+    vegaEmbed('#vis6', specVis6, { "actions": false, "renderer": "svg" }).catch(console.error);
+    vegaEmbed('#vis7', specVis7, { "actions": false, "renderer": "svg" }).catch(console.error);
+    vegaEmbed('#vis8', specVis8, { "actions": false, "renderer": "svg" }).catch(console.error);
+    vegaEmbed('#vis9', specVis9, { "actions": false, "renderer": "svg" }).catch(console.error);
+    vegaEmbed('#vis10', specVis10, { "actions": false, "renderer": "svg" }).catch(console.error);
+    vegaEmbed('#vis11', specVis11, { "actions": false, "renderer": "svg" }).catch(console.error);
   </script>
- 
+</div>
 </body>
+</html>

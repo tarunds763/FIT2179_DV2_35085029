@@ -1,0 +1,123 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Top 9 Costliest Invasive Species in Australia",
+    "subtitle": "Total estimated cost per year in 2017 USD — source: InvaCost database",
+    "fontSize": 16,
+    "fontWeight": "bold",
+    "subtitleFontSize": 12,
+    "anchor": "start",
+    "font": "Source Sans 3",
+    "subtitleFont": "Source Sans 3"
+  },
+  "width": 580,
+  "height": 280,
+  "data": {"url": "data/invacost_bubble.csv"},
+  "transform": [
+    {
+      "window": [{"op": "rank", "as": "rank"}],
+      "sort": [{"field": "cost_billions", "order": "descending"}]
+    }
+  ],
+  "layer": [
+    {
+      "mark": {"type": "bar", "cornerRadiusEnd": 3},
+      "encoding": {
+        "y": {
+          "field": "common_name",
+          "type": "nominal",
+          "sort": {"field": "cost_billions", "order": "descending"},
+          "axis": {
+            "title": null,
+            "labelFont": "Source Sans 3",
+            "labelFontSize": 11,
+            "labelLimit": 140,
+            "grid": false
+          }
+        },
+        "x": {
+          "field": "cost_billions",
+          "type": "quantitative",
+          "scale": {"domain": [0, 4.5]},
+          "axis": {
+            "title": "Cost per Year (USD billions, 2017)",
+            "titleFont": "Source Sans 3",
+            "titleFontSize": 11,
+            "labelFont": "Source Sans 3",
+            "grid": true,
+            "gridColor": "#E0DDD5",
+            "gridDash": [3, 3]
+          }
+        },
+        "color": {
+          "field": "cost_billions",
+          "type": "quantitative",
+          "scale": {
+            "range": ["#FDDCB5", "#D85A30", "#7B1D00"],
+            "domain": [0, 4.1]
+          },
+          "legend": null
+        },
+        "tooltip": [
+          {"field": "common_name",     "type": "nominal",      "title": "Species"},
+          {"field": "cost_billions",   "type": "quantitative", "title": "Cost per Year (USD bn)", "format": ".3f"},
+          {"field": "dominant_sector", "type": "nominal",      "title": "Primary Sector Affected"}
+        ]
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "dx": 6,
+        "fontSize": 11,
+        "font": "Source Sans 3",
+        "color": "#1A1A18"
+      },
+      "encoding": {
+        "y": {
+          "field": "common_name",
+          "type": "nominal",
+          "sort": {"field": "cost_billions", "order": "descending"}
+        },
+        "x": {
+          "field": "cost_billions",
+          "type": "quantitative"
+        },
+        "text": {
+          "field": "cost_billions",
+          "type": "quantitative",
+          "format": ".2f"
+        }
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "dx": 6,
+        "fontSize": 11,
+        "fontWeight": "bold",
+        "font": "Source Sans 3",
+        "color": "#FFFFFF"
+      },
+      "transform": [
+        {"filter": "datum.common_name === 'Feral Cat'"},
+        {"calculate": "2.0", "as": "label_x"}
+      ],
+      "encoding": {
+        "y": {
+          "field": "common_name",
+          "type": "nominal",
+          "sort": {"field": "cost_billions", "order": "descending"}
+        },
+        "x": {"field": "label_x", "type": "quantitative"},
+        "text": {"value": "4.04 — Costliest species by far"}
+      }
+    }
+  ],
+  "config": {
+    "view": {"stroke": null},
+    "font": "Source Sans 3"
+  }
+}

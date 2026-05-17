@@ -1,0 +1,11 @@
+label,x,y,side
+Feral Cat,0,54,invader
+European Rabbit,0,109,invader
+Red Fox,0,163,invader
+Cane Toad,0,217,invader
+Black Rat,0,271,invader
+Feral Pig,0,326,invader
+Mammals,1,76,native
+Birds,1,152,native
+Reptiles,1,228,native
+Amphibians,1,304,native

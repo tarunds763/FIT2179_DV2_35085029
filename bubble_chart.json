@@ -1,0 +1,141 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "title": {
+        "text": "The Price of Invasion: Economic Cost by Species",
+        "subtitle": "Total estimated cost per year in 2017 USD — bubble size and colour reflect total economic damage",
+        "fontSize": 16,
+        "fontWeight": "bold",
+        "subtitleFontSize": 12,
+        "anchor": "start",
+        "font": "Source Sans 3",
+        "subtitleFont": "Source Sans 3"
+    },
+    "width": 650,
+    "height": 380,
+    "data": {
+        "url": "data/invacost_bubble.csv"
+    },
+    "layer": [
+        {
+            "mark": {
+                "type": "circle",
+                "opacity": 0.85,
+                "stroke": "#FAFAF7",
+                "strokeWidth": 1.5
+            },
+            "encoding": {
+                "x": {
+                    "field": "common_name",
+                    "type": "nominal",
+                    "sort": "-y",
+                    "axis": {
+                        "title": null,
+                        "labelAngle": -45,
+                        "labelFontSize": 12,
+                        "labelFont": "Source Sans 3",
+                        "grid": false
+                    }
+                },
+                "y": {
+                    "field": "cost_billions",
+                    "type": "quantitative",
+                    "axis": {
+                        "title": "Cost per Year (USD billions, 2017)",
+                        "titleFont": "Source Sans 3",
+                        "titleFontSize": 12,
+                        "labelFont": "Source Sans 3",
+                        "grid": true,
+                        "gridColor": "#E0DDD5",
+                        "gridDash": [
+                            3,
+                            3
+                        ]
+                    }
+                },
+                "size": {
+                    "field": "cost_billions",
+                    "type": "quantitative",
+                    "scale": {
+                        "range": [
+                            200,
+                            4000
+                        ]
+                    },
+                    "legend": null
+                },
+                "color": {
+                    "field": "cost_billions",
+                    "type": "quantitative",
+                    "scale": {
+                        "range": [
+                            "#FDDCB5",
+                            "#D85A30",
+                            "#7B1D00"
+                        ],
+                        "domain": [
+                            0,
+                            4.1
+                        ]
+                    },
+                    "legend": null
+                },
+                "tooltip": [
+                    {
+                        "field": "common_name",
+                        "type": "nominal",
+                        "title": "Species"
+                    },
+                    {
+                        "field": "cost_billions",
+                        "type": "quantitative",
+                        "title": "Cost per Year (USD bn)",
+                        "format": ".3f"
+                    },
+                    {
+                        "field": "dominant_sector",
+                        "type": "nominal",
+                        "title": "Primary Sector Affected"
+                    }
+                ]
+            }
+        },
+        {
+            "mark": {
+                "type": "text",
+                "fontSize": 11,
+                "font": "Source Sans 3",
+                "fontWeight": "bold",
+                "color": "#7B1D00",
+                "align": "left",
+                "baseline": "bottom",
+                "dx": 10,
+                "dy": -12
+            },
+            "transform": [
+                {
+                    "filter": "datum.common_name === 'Feral Cat'"
+                }
+            ],
+            "encoding": {
+                "x": {
+                    "field": "common_name",
+                    "type": "nominal",
+                    "sort": "-y"
+                },
+                "y": {
+                    "field": "cost_billions",
+                    "type": "quantitative"
+                },
+                "text": {
+                    "value": "← Highest cost species"
+                }
+            }
+        }
+    ],
+    "config": {
+        "view": {
+            "stroke": null
+        },
+        "font": "Source Sans 3"
+    }
+}

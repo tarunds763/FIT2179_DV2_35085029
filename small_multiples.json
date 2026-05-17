@@ -1,0 +1,141 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Four Invaders, One Continent",
+    "subtitle": "Confirmed sightings from the Atlas of Living Australia — each panel shows a different invasive species",
+    "fontSize": 16,
+    "fontWeight": "bold",
+    "subtitleFontSize": 12,
+    "anchor": "start",
+    "font": "Source Sans 3",
+    "subtitleFont": "Source Sans 3"
+  },
+  "columns": 2,
+  "concat": [
+    {
+      "title": {
+        "text": "Feral Cat",
+        "fontSize": 13,
+        "fontWeight": "bold",
+        "font": "Source Sans 3",
+        "color": "#7B1D00"
+      },
+      "width": 340,
+      "height": 220,
+      "projection": {"type": "mercator"},
+      "layer": [
+        {
+          "data": {"url": "data/australia-states.json"},
+          "mark": {"type": "geoshape", "fill": "#F0EBE0", "stroke": "#C8C4B6", "strokeWidth": 0.8}
+        },
+        {
+          "data": {"url": "data/feral_cat_trimmed.csv"},
+          "mark": {"type": "circle", "opacity": 0.3, "size": 4, "color": "#D85A30"},
+          "encoding": {
+            "longitude": {"field": "decimalLongitude", "type": "quantitative"},
+            "latitude":  {"field": "decimalLatitude",  "type": "quantitative"},
+            "tooltip": [
+              {"field": "stateProvince", "type": "nominal",      "title": "State"},
+              {"field": "year",          "type": "quantitative", "title": "Year Recorded"}
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "title": {
+        "text": "European Rabbit",
+        "fontSize": 13,
+        "fontWeight": "bold",
+        "font": "Source Sans 3",
+        "color": "#7B1D00"
+      },
+      "width": 340,
+      "height": 220,
+      "projection": {"type": "mercator"},
+      "layer": [
+        {
+          "data": {"url": "data/australia-states.json"},
+          "mark": {"type": "geoshape", "fill": "#F0EBE0", "stroke": "#C8C4B6", "strokeWidth": 0.8}
+        },
+        {
+          "data": {"url": "data/rabbit_trimmed.csv"},
+          "mark": {"type": "circle", "opacity": 0.3, "size": 4, "color": "#D85A30"},
+          "encoding": {
+            "longitude": {"field": "decimalLongitude", "type": "quantitative"},
+            "latitude":  {"field": "decimalLatitude",  "type": "quantitative"},
+            "tooltip": [
+              {"field": "stateProvince", "type": "nominal",      "title": "State"},
+              {"field": "year",          "type": "quantitative", "title": "Year Recorded"}
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "title": {
+        "text": "Red Fox",
+        "fontSize": 13,
+        "fontWeight": "bold",
+        "font": "Source Sans 3",
+        "color": "#7B1D00"
+      },
+      "width": 340,
+      "height": 220,
+      "projection": {"type": "mercator"},
+      "layer": [
+        {
+          "data": {"url": "data/australia-states.json"},
+          "mark": {"type": "geoshape", "fill": "#F0EBE0", "stroke": "#C8C4B6", "strokeWidth": 0.8}
+        },
+        {
+          "data": {"url": "data/fox_trimmed.csv"},
+          "mark": {"type": "circle", "opacity": 0.3, "size": 4, "color": "#D85A30"},
+          "encoding": {
+            "longitude": {"field": "decimalLongitude", "type": "quantitative"},
+            "latitude":  {"field": "decimalLatitude",  "type": "quantitative"},
+            "tooltip": [
+              {"field": "stateProvince", "type": "nominal",      "title": "State"},
+              {"field": "year",          "type": "quantitative", "title": "Year Recorded"}
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "title": {
+        "text": "Cane Toad",
+        "fontSize": 13,
+        "fontWeight": "bold",
+        "font": "Source Sans 3",
+        "color": "#7B1D00"
+      },
+      "width": 340,
+      "height": 220,
+      "projection": {"type": "mercator"},
+      "layer": [
+        {
+          "data": {"url": "data/australia-states.json"},
+          "mark": {"type": "geoshape", "fill": "#F0EBE0", "stroke": "#C8C4B6", "strokeWidth": 0.8}
+        },
+        {
+          "data": {"url": "data/cane_toad_trimmed.csv"},
+          "mark": {"type": "circle", "opacity": 0.3, "size": 4, "color": "#D85A30"},
+          "encoding": {
+            "longitude": {"field": "decimalLongitude", "type": "quantitative"},
+            "latitude":  {"field": "decimalLatitude",  "type": "quantitative"},
+            "tooltip": [
+              {"field": "stateProvince", "type": "nominal",      "title": "State"},
+              {"field": "year",          "type": "quantitative", "title": "Year Recorded"}
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "config": {
+    "view": {"stroke": null},
+    "font": "Source Sans 3",
+    "concat": {"spacing": 20}
+  }
+}

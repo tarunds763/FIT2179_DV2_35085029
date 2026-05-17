@@ -1,0 +1,150 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Control Programs: Measurable Progress",
+    "subtitle": "Population index before and after each program (100 = baseline) — lower is better",
+    "fontSize": 16,
+    "fontWeight": "bold",
+    "subtitleFontSize": 12,
+    "anchor": "start",
+    "font": "Source Sans 3",
+    "subtitleFont": "Source Sans 3"
+  },
+  "width": 400,
+  "height": 380,
+  "data": {"url": "data/slope_chart.csv"},
+  "layer": [
+    {
+      "mark": {"type": "line", "strokeWidth": 2.5},
+      "encoding": {
+        "x": {
+          "field": "period",
+          "type": "nominal",
+          "sort": {"field": "period_order", "order": "ascending"},
+          "axis": {
+            "title": null,
+            "labelFont": "Source Sans 3",
+            "labelFontSize": 13,
+            "labelAngle": 0,
+            "grid": false,
+            "domain": false,
+            "ticks": false
+          }
+        },
+        "y": {
+          "field": "index",
+          "type": "quantitative",
+          "scale": {"domain": [-15, 112]},
+          "axis": {
+            "title": "Population Index (Before = 100)",
+            "titleFont": "Source Sans 3",
+            "titleFontSize": 11,
+            "labelFont": "Source Sans 3",
+            "grid": true,
+            "gridColor": "#E0DDD5",
+            "gridDash": [3, 3]
+          }
+        },
+        "color": {
+          "field": "outcome",
+          "type": "nominal",
+          "scale": {
+            "domain": ["Eradicated", "Reduced", "Ongoing"],
+            "range": ["#4A7C59", "#D85A30", "#C8C4B6"]
+          },
+          "legend": {
+            "title": "Program Outcome",
+            "orient": "bottom",
+            "direction": "horizontal",
+            "titleFont": "Source Sans 3",
+            "labelFont": "Source Sans 3",
+            "titleFontSize": 11,
+            "labelFontSize": 11
+          }
+        },
+        "detail": {"field": "program", "type": "nominal"},
+        "tooltip": [
+          {"field": "program", "type": "nominal",      "title": "Program"},
+          {"field": "species", "type": "nominal",      "title": "Species"},
+          {"field": "years",   "type": "nominal",      "title": "Years"},
+          {"field": "index",   "type": "quantitative", "title": "Population Index"},
+          {"field": "outcome", "type": "nominal",      "title": "Outcome"}
+        ]
+      }
+    },
+    {
+      "mark": {"type": "point", "filled": true, "size": 60, "strokeWidth": 0},
+      "encoding": {
+        "x": {
+          "field": "period",
+          "type": "nominal",
+          "sort": {"field": "period_order", "order": "ascending"}
+        },
+        "y": {"field": "index", "type": "quantitative"},
+        "color": {
+          "field": "outcome",
+          "type": "nominal",
+          "scale": {
+            "domain": ["Eradicated", "Reduced", "Ongoing"],
+            "range": ["#4A7C59", "#D85A30", "#C8C4B6"]
+          },
+          "legend": null
+        }
+      }
+    },
+    {
+      "transform": [{"filter": "datum.period === 'After'"}],
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "dx": 8,
+        "fontSize": 10,
+        "font": "Source Sans 3",
+        "lineBreak": "\n"
+      },
+      "encoding": {
+        "x": {
+          "field": "period",
+          "type": "nominal",
+          "sort": {"field": "period_order", "order": "ascending"}
+        },
+        "y": {"field": "label_y", "type": "quantitative"},
+        "text": {"field": "program", "type": "nominal"},
+        "color": {
+          "field": "outcome",
+          "type": "nominal",
+          "scale": {
+            "domain": ["Eradicated", "Reduced", "Ongoing"],
+            "range": ["#4A7C59", "#D85A30", "#C8C4B6"]
+          },
+          "legend": null
+        }
+      }
+    },
+    {
+      "data": {"values": [{"period": "Before", "index": 20, "label": "3 programs → zero ↓"}]},
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "dx": 4,
+        "fontSize": 11,
+        "fontWeight": 700,
+        "font": "Source Sans 3",
+        "color": "#4A7C59"
+      },
+      "encoding": {
+        "x": {
+          "field": "period",
+          "type": "nominal",
+          "sort": {"field": "period_order", "order": "ascending"}
+        },
+        "y": {"field": "index", "type": "quantitative"},
+        "text": {"field": "label", "type": "nominal"}
+      }
+    }
+  ],
+  "config": {
+    "view": {"stroke": null},
+    "font": "Source Sans 3"
+  }
+}

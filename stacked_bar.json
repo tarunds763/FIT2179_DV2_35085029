@@ -1,0 +1,157 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Threatened Native Animals by Class and Status",
+    "subtitle": "Number of species listed under the EPBC Act \u2014 source: data.gov.au, February 2026",
+    "fontSize": 16,
+    "fontWeight": "bold",
+    "subtitleFontSize": 12,
+    "anchor": "start",
+    "font": "Source Sans 3",
+    "subtitleFont": "Source Sans 3"
+  },
+  "width": 560,
+  "height": 300,
+  "data": {
+    "url": "data/epbc_status_by_class.csv"
+  },
+  "layer": [
+    {
+      "mark": {
+        "type": "bar",
+        "cornerRadiusTopLeft": 2,
+        "cornerRadiusTopRight": 2
+      },
+      "encoding": {
+        "x": {
+          "field": "class_label",
+          "type": "nominal",
+          "sort": [
+            "Birds",
+            "Mammals",
+            "Reptiles",
+            "Fish",
+            "Amphibians",
+            "Insects"
+          ],
+          "axis": {
+            "title": null,
+            "labelFont": "Source Sans 3",
+            "labelFontSize": 12,
+            "grid": false,
+            "labelPadding": 8,
+            "labelAngle": 0
+          }
+        },
+        "y": {
+          "field": "count",
+          "type": "quantitative",
+          "aggregate": "sum",
+          "stack": "zero",
+          "axis": {
+            "title": "Number of Species",
+            "titleFont": "Source Sans 3",
+            "titleFontSize": 11,
+            "labelFont": "Source Sans 3",
+            "grid": true,
+            "gridColor": "#E0DDD5",
+            "gridDash": [
+              3,
+              3
+            ]
+          }
+        },
+        "color": {
+          "field": "status",
+          "type": "nominal",
+          "scale": {
+            "domain": [
+              "Vulnerable",
+              "Endangered",
+              "Critically Endangered",
+              "Extinct"
+            ],
+            "range": [
+              "#FDDCB5",
+              "#D85A30",
+              "#7B1D00",
+              "#1A1A18"
+            ]
+          },
+          "legend": {
+            "title": "Threatened Status",
+            "orient": "right",
+            "titleFont": "Source Sans 3",
+            "labelFont": "Source Sans 3",
+            "titleFontSize": 11,
+            "labelFontSize": 11
+          }
+        },
+        "tooltip": [
+          {
+            "field": "class_label",
+            "type": "nominal",
+            "title": "Animal Class"
+          },
+          {
+            "field": "status",
+            "type": "nominal",
+            "title": "Threatened Status"
+          },
+          {
+            "field": "count",
+            "type": "quantitative",
+            "title": "Number of Species"
+          }
+        ]
+      }
+    },
+    {
+      "data": {
+        "values": [
+          {
+            "class_label": "Mammals",
+            "total": 152
+          }
+        ]
+      },
+      "mark": {
+        "type": "text",
+        "fontSize": 11,
+        "fontWeight": "bold",
+        "font": "Source Sans 3",
+        "color": "#7B1D00",
+        "align": "left",
+        "dx": 8,
+        "dy": -8
+      },
+      "encoding": {
+        "x": {
+          "field": "class_label",
+          "type": "nominal",
+          "sort": [
+            "Birds",
+            "Mammals",
+            "Reptiles",
+            "Fish",
+            "Amphibians",
+            "Insects"
+          ]
+        },
+        "y": {
+          "field": "total",
+          "type": "quantitative"
+        },
+        "text": {
+          "value": "39 mammal species extinct"
+        }
+      }
+    }
+  ],
+  "config": {
+    "view": {
+      "stroke": null
+    },
+    "font": "Source Sans 3"
+  }
+}

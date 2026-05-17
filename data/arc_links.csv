@@ -1,0 +1,19 @@
+invader,native_class,n,x1,y1,x2,y2,stroke_width
+Feral Cat,Mammals,123,0,54,1,76,10.0
+Feral Cat,Birds,48,0,54,1,152,3.9
+Feral Cat,Reptiles,30,0,54,1,228,2.44
+European Rabbit,Mammals,95,0,109,1,76,7.72
+European Rabbit,Birds,80,0,109,1,152,6.5
+European Rabbit,Reptiles,60,0,109,1,228,4.88
+European Rabbit,Amphibians,40,0,109,1,304,3.25
+Red Fox,Mammals,72,0,163,1,76,5.85
+Red Fox,Birds,35,0,163,1,152,2.85
+Red Fox,Reptiles,20,0,163,1,228,1.63
+Cane Toad,Reptiles,40,0,217,1,228,3.25
+Cane Toad,Amphibians,55,0,217,1,304,4.47
+Cane Toad,Mammals,15,0,217,1,76,1.22
+Black Rat,Birds,60,0,271,1,152,4.88
+Black Rat,Mammals,45,0,271,1,76,3.66
+Feral Pig,Mammals,30,0,326,1,76,2.44
+Feral Pig,Reptiles,25,0,326,1,228,2.03
+Feral Pig,Amphibians,20,0,326,1,304,1.63
