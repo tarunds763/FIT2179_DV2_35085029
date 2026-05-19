@@ -2,7 +2,7 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "title": {
     "text": "Threatened Species Across Australian States",
-    "subtitle": "Number of threatened species recorded per state — darker means more species at risk",
+    "subtitle": "Number of threatened species recorded per state. Darker means more species at risk.",
     "fontSize": 16,
     "fontWeight": "bold",
     "subtitleFontSize": 12,

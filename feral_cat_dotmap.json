@@ -2,7 +2,7 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "title": {
     "text": "Feral Cats: A Continent-Wide Crisis",
-    "subtitle": "Each dot is a confirmed sighting — 10,000 records from the Atlas of Living Australia",
+    "subtitle": "Each dot is a confirmed sighting. 10,000 records from the Atlas of Living Australia.",
     "fontSize": 16,
     "fontWeight": "bold",
     "subtitleFontSize": 12,

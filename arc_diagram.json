@@ -2,7 +2,7 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "title": {
     "text": "Who Threatens Whom: Invaders vs Native Species",
-    "subtitle": "Line thickness shows number of native species threatened — hover for details",
+    "subtitle": "Line thickness shows number of native species threatened. Hover for details.",
     "fontSize": 16,
     "fontWeight": "bold",
     "subtitleFontSize": 12,

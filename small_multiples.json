@@ -2,7 +2,7 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "title": {
     "text": "Four Invaders, One Continent",
-    "subtitle": "Confirmed sightings from the Atlas of Living Australia — each panel shows a different invasive species",
+    "subtitle": "Confirmed sightings from the Atlas of Living Australia. Each panel shows a different invasive species.",
     "fontSize": 16,
     "fontWeight": "bold",
     "subtitleFontSize": 12,

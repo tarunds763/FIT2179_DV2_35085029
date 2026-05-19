@@ -2,7 +2,7 @@
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
     "title": {
         "text": "The Price of Invasion: Economic Cost by Species",
-        "subtitle": "Total estimated cost per year in 2017 USD — bubble size and colour reflect total economic damage",
+        "subtitle": "Total estimated cost per year in 2017 USD. Bubble size and colour reflect total economic damage",
         "fontSize": 16,
         "fontWeight": "bold",
         "subtitleFontSize": 12,

@@ -2,7 +2,7 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "title": {
     "text": "Threatened Native Animals by Class and Status",
-    "subtitle": "Number of species listed under the EPBC Act \u2014 source: data.gov.au, February 2026",
+    "subtitle": "Number of species listed under the EPBC Act. Source: data.gov.au, February 2026.",
     "fontSize": 16,
     "fontWeight": "bold",
     "subtitleFontSize": 12,

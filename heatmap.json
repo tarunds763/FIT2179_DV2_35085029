@@ -2,7 +2,7 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "title": {
     "text": "Threatened Species Across States and Animal Classes",
-    "subtitle": "Number of species listed under the EPBC Act per state — source: data.gov.au, February 2026",
+    "subtitle": "Number of species listed under the EPBC Act per state. Source: data.gov.au, February 2026.",
     "fontSize": 16,
     "fontWeight": "bold",
     "subtitleFontSize": 12,

@@ -2,7 +2,7 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "title": {
     "text": "Control Programs: Measurable Progress",
-    "subtitle": "Population index before and after each program (100 = baseline) — lower is better",
+    "subtitle": "Population index before and after each program (100 = baseline). Lower is better.",
     "fontSize": 16,
     "fontWeight": "bold",
     "subtitleFontSize": 12,
