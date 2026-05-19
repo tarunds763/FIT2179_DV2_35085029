@@ -135,7 +135,8 @@ p {
    HERO STATS (V2)
    ============================================================ */
 .stats-row {
-  display: flex;
+  display: flex !important;
+  flex-direction: row;
   gap: 20px;
   margin: 24px 0;
 }
@@ -150,11 +151,12 @@ p {
 
 .stat-number {
   font-family: 'Playfair Display', serif;
-  font-size: 2.4rem;
+  font-size: 3rem;
   font-weight: 900;
   color: #D85A30;
   line-height: 1;
   display: block;
+  margin-bottom: 12px;
 }
 
 .stat-unit {

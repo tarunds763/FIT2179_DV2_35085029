@@ -1,167 +1,171 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Australia's Silent Invasion</title>
-  <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
-  <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
-  <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.3/build/pure-min.css"
-  integrity="sha384-cg6SkqEOCV1NbJoCu11+bm0NvBRc8IYLRGXkmNrqUBfTjmMYwNKPWBTIKyw9mHNJ"
-  crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Australia's Silent Invasion</title>
+    <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Source+Sans+3:wght@300;400;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.3/build/pure-min.css"
+        integrity="sha384-cg6SkqEOCV1NbJoCu11+bm0NvBRc8IYLRGXkmNrqUBfTjmMYwNKPWBTIKyw9mHNJ" crossorigin="anonymous">
 </head>
+
 <body>
-<div class="page">
+    <div class="page">
 
-  <header>
-    <p class="eyebrow">Australia's Wildlife Crisis</p>
-    <h1>The Silent Invasion</h1>
-    <p class="subtitle">Since 1788, humans have unleashed hundreds of foreign species
-    across Australia. The damage is greater than most Australians will ever know.</p>
-  </header>
+        <header>
+            <p class="eyebrow">Australia's Wildlife Crisis</p>
+            <h1>The Silent Invasion</h1>
+            <p class="subtitle">Since 1788, humans have unleashed hundreds of foreign species
+                across Australia. The damage is greater than most Australians will ever know.</p>
+        </header>
 
-  
-  <section id="section1">
-    <div class="section-tag">Part 1</div>
-    <h2>A Paradise with a Problem</h2>
-    <div class="narrative">
-      <p>Australia is one of the most biologically extraordinary places
-      on Earth. Around <strong>80% of its mammals, reptiles, and
-      flowering plants exist nowhere else in the world.</strong></p>
-      <p>Yet today, Australia holds a record no country wants —
-      the worst modern mammal extinction rate on the planet.</p>
+
+        <section id="section1">
+            <div class="section-tag">Part 1</div>
+            <h2>A Paradise with a Problem</h2>
+            <div class="narrative">
+                <p>Australia is one of the most biologically extraordinary places
+                    on Earth. Around <strong>80% of its mammals, reptiles, and
+                        flowering plants exist nowhere else in the world.</strong></p>
+                <p>Yet today, Australia holds a record no country wants —
+                    the worst modern mammal extinction rate on the planet.</p>
+            </div>
+
+
+            <div class="stats-row">
+                <div class="stat-card">
+                    <div class="stat-number">1.5B</div>
+                    <div class="stat-label">Native animals killed by feral cats every year</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">34</div>
+                    <div class="stat-label">Mammal species driven to extinction since 1788</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">$390B</div>
+                    <div class="stat-label">Economic losses caused by invasive species since 1960</div>
+                </div>
+            </div>
+
+            <p class="chart-intro">The crisis is not evenly spread. Some states carry
+                a disproportionate burden.</p>
+
+
+            <div id="vis1"></div>
+
+            <p class="bridge">The map tells us where the problem is concentrated.
+                But to understand how it got this bad, we need to go back to where
+                it all began.</p>
+        </section>
+
+
+        <section id="section2">
+            <div class="section-tag">Part 2</div>
+            <h2>The Culprits: A 200-Year Invasion</h2>
+            <div class="narrative">
+                <p>None of this happened overnight. The invasion began the moment
+                    the First Fleet arrived in 1788, and it has never stopped.</p>
+                <p>Over two centuries, these decisions compounded into a
+                    continental-scale ecological emergency.</p>
+            </div>
+
+
+            <div id="vis3"></div>
+
+            <p class="chart-intro">Of all the invaders, none has been more
+                devastating than the feral cat.</p>
+
+
+            <div id="vis4"></div>
+
+
+            <div id="vis5"></div>
+
+            <p class="bridge">The spread is staggering. But what does it actually
+                cost, in animals lost and in dollars spent?</p>
+        </section>
+
+
+        <section id="section3">
+            <div class="section-tag">Part 3</div>
+            <h2>The True Cost: What We Have Lost</h2>
+            <div class="narrative">
+                <p>Most Australians think of invasive species as an environmental
+                    issue. In reality, it is also one of the most expensive problems
+                    this country faces.</p>
+            </div>
+
+            <p class="chart-intro">Feral cats alone cost more per year than any
+                other invasive species tracked in Australia.</p>
+
+            <div id="vis6"></div>
+
+            <div id="vis7"></div>
+
+            <div id="vis8"></div>
+
+            <div id="vis9"></div>
+
+        </section>
+
+
+        <section id="section4">
+            <div class="section-tag">Part 4</div>
+            <h2>Fighting Back: Can Australia Win?</h2>
+
+            <div id="vis10"></div>
+
+            <div id="vis11"></div>
+
+            <div class="narrative">
+                <p>The story of invasive species in Australia is not only one
+                    of loss. It is also one of hard-won, painstaking progress.</p>
+            </div>
+
+        </section>
+
+        <footer>
+            <div class="footer-inner">
+                <p><strong>Author:</strong> Tarun Saravanan · Monash University FIT2179 · 19 May 2026</p>
+                <p><strong>Data:</strong> Atlas of Living Australia (ala.org.au) ·
+                    InvaCost (doi.org/10.6084/m9.figshare.12668570) ·
+                    EPBC Act (data.gov.au)</p>
+            </div>
+        </footer>
+
+
+        <script>
+            var specVis1 = "./choropleth_species.json";
+            var specVis3 = "./invasion_timeline.json";
+            var specVis4 = "./feral_cat_dotmap.json";
+            var specVis5 = "./small_multiples.json";
+            var specVis6 = "./bubble_chart.json";
+            var specVis7 = "./stacked_bar.json";
+            var specVis8 = "./arc_diagram.json";
+            var specVis9 = "./heatmap.json";
+            var specVis10 = "./slope_chart.json";
+            var specVis11 = "./management_map.json";
+
+
+            vegaEmbed('#vis1', specVis1, { "actions": false, "renderer": "svg" }).catch(console.error);
+            vegaEmbed('#vis3', specVis3, { "actions": false, "renderer": "svg" }).catch(console.error);
+            vegaEmbed('#vis4', specVis4, { "actions": false, "renderer": "svg" }).catch(console.error);
+            vegaEmbed('#vis5', specVis5, { "actions": false, "renderer": "svg" }).catch(console.error);
+            vegaEmbed('#vis6', specVis6, { "actions": false, "renderer": "svg" }).catch(console.error);
+            vegaEmbed('#vis7', specVis7, { "actions": false, "renderer": "svg" }).catch(console.error);
+            vegaEmbed('#vis8', specVis8, { "actions": false, "renderer": "svg" }).catch(console.error);
+            vegaEmbed('#vis9', specVis9, { "actions": false, "renderer": "svg" }).catch(console.error);
+            vegaEmbed('#vis10', specVis10, { "actions": false, "renderer": "svg" }).catch(console.error);
+            vegaEmbed('#vis11', specVis11, { "actions": false, "renderer": "svg" }).catch(console.error);
+        </script>
     </div>
-
-    
-    <div class="stats-row">
-      <div class="stat-card">
-        <div class="stat-number">1.5<span class="stat-unit">B</span></div>
-        <div class="stat-label">Native animals killed by feral cats every year</div>
-      </div>
-      <div class="stat-card">
-        <div class="stat-number">34</div>
-        <div class="stat-label">Mammal species driven to extinction since 1788</div>
-      </div>
-      <div class="stat-card">
-        <div class="stat-number">$390<span class="stat-unit">B</span></div>
-        <div class="stat-label">Economic losses caused by invasive species since 1960</div>
-      </div>
-    </div>
-
-    <p class="chart-intro">The crisis is not evenly spread. Some states carry
-    a disproportionate burden.</p>
-
-    
-    <div id="vis1"></div>
-
-    <p class="bridge">The map tells us where the problem is concentrated.
-    But to understand how it got this bad, we need to go back to where
-    it all began.</p>
-  </section>
-
-  
-  <section id="section2">
-    <div class="section-tag">Part 2</div>
-    <h2>The Culprits: A 200-Year Invasion</h2>
-    <div class="narrative">
-      <p>None of this happened overnight. The invasion began the moment
-      the First Fleet arrived in 1788, and it has never stopped.</p>
-      <p>Over two centuries, these decisions compounded into a
-      continental-scale ecological emergency.</p>
-    </div>
-
-    
-    <div id="vis3"></div>
-
-    <p class="chart-intro">Of all the invaders, none has been more
-    devastating than the feral cat.</p>
-
-    
-    <div id="vis4"></div>
-
-    
-    <div id="vis5"></div>
-
-    <p class="bridge">The spread is staggering. But what does it actually
-    cost, in animals lost and in dollars spent?</p>
-  </section>
-
-  
-  <section id="section3">
-    <div class="section-tag">Part 3</div>
-    <h2>The True Cost: What We Have Lost</h2>
-    <div class="narrative">
-      <p>Most Australians think of invasive species as an environmental
-      issue. In reality, it is also one of the most expensive problems
-      this country faces.</p>
-    </div>
-
-    <p class="chart-intro">Feral cats alone cost more per year than any
-    other invasive species tracked in Australia.</p>
-
-    <div id="vis6"></div>
-
-    <div id="vis7"></div>
-
-    <div id="vis8"></div>
-
-    <div id="vis9"></div>
-    
-  </section>
-
-  
-  <section id="section4">
-    <div class="section-tag">Part 4</div>
-    <h2>Fighting Back: Can Australia Win?</h2>
-
-    <div id="vis10"></div>
-
-    <div id="vis11"></div>
-
-    <div class="narrative">
-      <p>The story of invasive species in Australia is not only one
-      of loss. It is also one of hard-won, painstaking progress.</p>
-    </div>
-    
-  </section>
-
-  <footer>
-    <div class="footer-inner">
-      <p><strong>Author:</strong> Tarun Saravanan · Monash University FIT2179 · 19 May 2026</p>
-      <p><strong>Data:</strong> Atlas of Living Australia (ala.org.au) ·
-      InvaCost (doi.org/10.6084/m9.figshare.12668570) ·
-      EPBC Act (data.gov.au)</p>
-    </div>
-  </footer>
-
-  
-  <script>
-    var specVis1 = "./choropleth_species.json";
-    var specVis3 = "./invasion_timeline.json";
-    var specVis4 = "./feral_cat_dotmap.json";
-    var specVis5 = "./small_multiples.json";
-    var specVis6 = "./bubble_chart.json";
-    var specVis7 = "./stacked_bar.json";
-    var specVis8 = "./arc_diagram.json";
-    var specVis9 = "./heatmap.json";
-    var specVis10 = "./slope_chart.json";
-    var specVis11 = "./management_map.json";
-
-
-    vegaEmbed('#vis1', specVis1, { "actions": false, "renderer": "svg" }).catch(console.error);
-    vegaEmbed('#vis3', specVis3, { "actions": false, "renderer": "svg" }).catch(console.error);
-    vegaEmbed('#vis4', specVis4, { "actions": false, "renderer": "svg" }).catch(console.error);
-    vegaEmbed('#vis5', specVis5, { "actions": false, "renderer": "svg" }).catch(console.error);
-    vegaEmbed('#vis6', specVis6, { "actions": false, "renderer": "svg" }).catch(console.error);
-    vegaEmbed('#vis7', specVis7, { "actions": false, "renderer": "svg" }).catch(console.error);
-    vegaEmbed('#vis8', specVis8, { "actions": false, "renderer": "svg" }).catch(console.error);
-    vegaEmbed('#vis9', specVis9, { "actions": false, "renderer": "svg" }).catch(console.error);
-    vegaEmbed('#vis10', specVis10, { "actions": false, "renderer": "svg" }).catch(console.error);
-    vegaEmbed('#vis11', specVis11, { "actions": false, "renderer": "svg" }).catch(console.error);
-  </script>
-</div>
 </body>
+
 </html>
