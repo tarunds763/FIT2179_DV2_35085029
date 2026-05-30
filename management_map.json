@@ -2,41 +2,66 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "title": {
     "text": "Active Invasive Species Management by State",
-    "subtitle": "Percentage of state area covered by active invasive species control programs",
+    "subtitle": "Percentage of state area covered by active invasive species control programs.",
     "fontSize": 16,
     "fontWeight": "bold",
     "subtitleFontSize": 12,
     "anchor": "start",
     "font": "Source Sans 3",
-    "subtitleFont": "Source Sans 3"
+    "subtitleFont": "Source Sans 3",
+    "color": "#172A39",
+    "subtitleColor": "#6E7575"
   },
-  "width": 600,
-  "height": 460,
-  "projection": {"type": "mercator"},
+  "width": 360,
+  "height": 360,
+  "projection": {
+    "type": "mercator"
+  },
   "layer": [
     {
       "data": {
-  "url": "data/australia-states.json",
-  "format": {"type": "json", "property": "features"}
-},
+        "url": "data/australia-states.json",
+        "format": {
+          "type": "json",
+          "property": "features"
+        }
+      },
       "transform": [
         {
           "lookup": "properties.STATE_NAME",
           "from": {
-            "data": {"url": "data/management_coverage.csv"},
+            "data": {
+              "url": "data/management_coverage.csv"
+            },
             "key": "state",
-            "fields": ["coverage_pct", "programs", "area_managed_km2"]
+            "fields": [
+              "coverage_pct",
+              "programs",
+              "area_managed_km2"
+            ]
           }
         }
       ],
-      "mark": {"type": "geoshape", "stroke": "#C8C4B6", "strokeWidth": 0.8},
+      "mark": {
+        "type": "geoshape",
+        "stroke": "#CFCAC5",
+        "strokeWidth": 0.7
+      },
       "encoding": {
         "color": {
           "field": "coverage_pct",
           "type": "quantitative",
           "scale": {
-            "range": ["#FFF3EE", "#FDDCB5", "#D85A30", "#7B1D00"],
-            "domain": [0, 100]
+            "domain": [
+              0,
+              100
+            ],
+            "range": [
+              "#F6F1EC",
+              "#E7D4C6",
+              "#C97A56",
+              "#7B1D00"
+            ]
           },
           "legend": {
             "title": "Coverage (%)",
@@ -45,41 +70,77 @@
             "labelFont": "Source Sans 3",
             "titleFontSize": 11,
             "labelFontSize": 11,
+            "titleColor": "#172A39",
+            "labelColor": "#6E7575",
             "gradientLength": 120
           }
         },
         "tooltip": [
-          {"field": "properties.STATE_NAME", "type": "nominal",      "title": "State"},
-          {"field": "coverage_pct",          "type": "quantitative", "title": "Coverage (%)"},
-          {"field": "programs",              "type": "quantitative", "title": "Active Programs"},
-          {"field": "area_managed_km2",      "type": "quantitative", "title": "Area Managed (km²)", "format": ","}
+          {
+            "field": "properties.STATE_NAME",
+            "type": "nominal",
+            "title": "State"
+          },
+          {
+            "field": "coverage_pct",
+            "type": "quantitative",
+            "title": "Coverage (%)",
+            "format": ".1f"
+          },
+          {
+            "field": "programs",
+            "type": "quantitative",
+            "title": "Active Programs"
+          },
+          {
+            "field": "area_managed_km2",
+            "type": "quantitative",
+            "title": "Area Managed (km²)",
+            "format": ","
+          }
         ]
       }
     },
     {
       "data": {
         "values": [
-          {"lon": 118.0, "lat": -28.0, "label": "Large states remain\nunder-managed."}
+          {
+            "lon": 117.0,
+            "lat": -26.0,
+            "label": "Large states remain under-managed"
+          }
         ]
       },
       "mark": {
         "type": "text",
-        "fontSize": 11,
-        "fontWeight": 700,
+        "fontSize": 10,
+        "fontWeight": 600,
+        "fontStyle": "italic",
         "font": "Source Sans 3",
         "color": "#7B1D00",
-        "align": "left",
-        "lineBreak": "\n"
+        "align": "left"
       },
       "encoding": {
-        "longitude": {"field": "lon", "type": "quantitative"},
-        "latitude":  {"field": "lat", "type": "quantitative"},
-        "text":      {"field": "label", "type": "nominal"}
+        "longitude": {
+          "field": "lon",
+          "type": "quantitative"
+        },
+        "latitude": {
+          "field": "lat",
+          "type": "quantitative"
+        },
+        "text": {
+          "field": "label",
+          "type": "nominal"
+        }
       }
     }
   ],
   "config": {
-    "view": {"stroke": null},
-    "font": "Source Sans 3"
+    "view": {
+      "stroke": null
+    },
+    "font": "Source Sans 3",
+    "background": null
   }
 }

@@ -1,14 +1,16 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "title": {
-    "text": "Four Invaders, One Continent",
+    "text": "Four Invaders, One Continent (Introduced Since 1788)",
     "subtitle": "Confirmed sightings from the Atlas of Living Australia. Each panel shows a different invasive species.",
     "fontSize": 16,
     "fontWeight": "bold",
     "subtitleFontSize": 12,
     "anchor": "start",
     "font": "Source Sans 3",
-    "subtitleFont": "Source Sans 3"
+    "subtitleFont": "Source Sans 3",
+    "color": "#172A39",
+    "subtitleColor": "#6E7575"
   },
   "columns": 2,
   "concat": [
@@ -18,25 +20,59 @@
         "fontSize": 13,
         "fontWeight": "bold",
         "font": "Source Sans 3",
-        "color": "#7B1D00"
+        "color": "#172A39"
       },
-      "width": 340,
+      "width": 300,
       "height": 220,
-      "projection": {"type": "mercator"},
+      "projection": {
+        "type": "mercator"
+      },
       "layer": [
         {
-          "data": {"url": "data/australia-states.json"},
-          "mark": {"type": "geoshape", "fill": "#F0EBE0", "stroke": "#C8C4B6", "strokeWidth": 0.8}
+          "data": {
+            "url": "data/australia-states.json"
+          },
+          "format": {
+            "type": "json",
+            "property": "features"
+          },
+          "mark": {
+            "type": "geoshape",
+            "fill": "#E9E4E0",
+            "stroke": "#CFCAC5",
+            "strokeWidth": 0.8
+          }
         },
         {
-          "data": {"url": "data/feral_cat_trimmed.csv"},
-          "mark": {"type": "circle", "opacity": 0.3, "size": 4, "color": "#D85A30"},
+          "data": {
+            "url": "data/feral_cat_trimmed.csv"
+          },
+          "mark": {
+            "type": "circle",
+            "opacity": 0.22,
+            "size": 4,
+            "color": "#B85C3E"
+          },
           "encoding": {
-            "longitude": {"field": "decimalLongitude", "type": "quantitative"},
-            "latitude":  {"field": "decimalLatitude",  "type": "quantitative"},
+            "longitude": {
+              "field": "decimalLongitude",
+              "type": "quantitative"
+            },
+            "latitude": {
+              "field": "decimalLatitude",
+              "type": "quantitative"
+            },
             "tooltip": [
-              {"field": "stateProvince", "type": "nominal",      "title": "State"},
-              {"field": "year",          "type": "quantitative", "title": "Year Recorded"}
+              {
+                "field": "stateProvince",
+                "type": "nominal",
+                "title": "State"
+              },
+              {
+                "field": "year",
+                "type": "quantitative",
+                "title": "Year Recorded"
+              }
             ]
           }
         }
@@ -48,25 +84,55 @@
         "fontSize": 13,
         "fontWeight": "bold",
         "font": "Source Sans 3",
-        "color": "#7B1D00"
+        "color": "#172A39"
       },
-      "width": 340,
+      "width": 300,
       "height": 220,
-      "projection": {"type": "mercator"},
+      "projection": {
+        "type": "mercator"
+      },
       "layer": [
         {
-          "data": {"url": "data/australia-states.json"},
-          "mark": {"type": "geoshape", "fill": "#F0EBE0", "stroke": "#C8C4B6", "strokeWidth": 0.8}
+          "data": {
+            "url": "data/australia-states.json"
+          },
+          "mark": {
+            "type": "geoshape",
+            "fill": "#E9E4E0",
+            "stroke": "#CFCAC5",
+            "strokeWidth": 0.8
+          }
         },
         {
-          "data": {"url": "data/rabbit_trimmed.csv"},
-          "mark": {"type": "circle", "opacity": 0.3, "size": 4, "color": "#D85A30"},
+          "data": {
+            "url": "data/rabbit_trimmed.csv"
+          },
+          "mark": {
+            "type": "circle",
+            "opacity": 0.22,
+            "size": 4,
+            "color": "#B85C3E"
+          },
           "encoding": {
-            "longitude": {"field": "decimalLongitude", "type": "quantitative"},
-            "latitude":  {"field": "decimalLatitude",  "type": "quantitative"},
+            "longitude": {
+              "field": "decimalLongitude",
+              "type": "quantitative"
+            },
+            "latitude": {
+              "field": "decimalLatitude",
+              "type": "quantitative"
+            },
             "tooltip": [
-              {"field": "stateProvince", "type": "nominal",      "title": "State"},
-              {"field": "year",          "type": "quantitative", "title": "Year Recorded"}
+              {
+                "field": "stateProvince",
+                "type": "nominal",
+                "title": "State"
+              },
+              {
+                "field": "year",
+                "type": "quantitative",
+                "title": "Year Recorded"
+              }
             ]
           }
         }
@@ -78,25 +144,55 @@
         "fontSize": 13,
         "fontWeight": "bold",
         "font": "Source Sans 3",
-        "color": "#7B1D00"
+        "color": "#172A39"
       },
-      "width": 340,
+      "width": 300,
       "height": 220,
-      "projection": {"type": "mercator"},
+      "projection": {
+        "type": "mercator"
+      },
       "layer": [
         {
-          "data": {"url": "data/australia-states.json"},
-          "mark": {"type": "geoshape", "fill": "#F0EBE0", "stroke": "#C8C4B6", "strokeWidth": 0.8}
+          "data": {
+            "url": "data/australia-states.json"
+          },
+          "mark": {
+            "type": "geoshape",
+            "fill": "#E9E4E0",
+            "stroke": "#CFCAC5",
+            "strokeWidth": 0.8
+          }
         },
         {
-          "data": {"url": "data/fox_trimmed.csv"},
-          "mark": {"type": "circle", "opacity": 0.3, "size": 4, "color": "#D85A30"},
+          "data": {
+            "url": "data/fox_trimmed.csv"
+          },
+          "mark": {
+            "type": "circle",
+            "opacity": 0.22,
+            "size": 4,
+            "color": "#B85C3E"
+          },
           "encoding": {
-            "longitude": {"field": "decimalLongitude", "type": "quantitative"},
-            "latitude":  {"field": "decimalLatitude",  "type": "quantitative"},
+            "longitude": {
+              "field": "decimalLongitude",
+              "type": "quantitative"
+            },
+            "latitude": {
+              "field": "decimalLatitude",
+              "type": "quantitative"
+            },
             "tooltip": [
-              {"field": "stateProvince", "type": "nominal",      "title": "State"},
-              {"field": "year",          "type": "quantitative", "title": "Year Recorded"}
+              {
+                "field": "stateProvince",
+                "type": "nominal",
+                "title": "State"
+              },
+              {
+                "field": "year",
+                "type": "quantitative",
+                "title": "Year Recorded"
+              }
             ]
           }
         }
@@ -108,25 +204,55 @@
         "fontSize": 13,
         "fontWeight": "bold",
         "font": "Source Sans 3",
-        "color": "#7B1D00"
+        "color": "#172A39"
       },
-      "width": 340,
+      "width": 300,
       "height": 220,
-      "projection": {"type": "mercator"},
+      "projection": {
+        "type": "mercator"
+      },
       "layer": [
         {
-          "data": {"url": "data/australia-states.json"},
-          "mark": {"type": "geoshape", "fill": "#F0EBE0", "stroke": "#C8C4B6", "strokeWidth": 0.8}
+          "data": {
+            "url": "data/australia-states.json"
+          },
+          "mark": {
+            "type": "geoshape",
+            "fill": "#E9E4E0",
+            "stroke": "#CFCAC5",
+            "strokeWidth": 0.8
+          }
         },
         {
-          "data": {"url": "data/cane_toad_trimmed.csv"},
-          "mark": {"type": "circle", "opacity": 0.3, "size": 4, "color": "#D85A30"},
+          "data": {
+            "url": "data/cane_toad_trimmed.csv"
+          },
+          "mark": {
+            "type": "circle",
+            "opacity": 0.22,
+            "size": 4,
+            "color": "#B85C3E"
+          },
           "encoding": {
-            "longitude": {"field": "decimalLongitude", "type": "quantitative"},
-            "latitude":  {"field": "decimalLatitude",  "type": "quantitative"},
+            "longitude": {
+              "field": "decimalLongitude",
+              "type": "quantitative"
+            },
+            "latitude": {
+              "field": "decimalLatitude",
+              "type": "quantitative"
+            },
             "tooltip": [
-              {"field": "stateProvince", "type": "nominal",      "title": "State"},
-              {"field": "year",          "type": "quantitative", "title": "Year Recorded"}
+              {
+                "field": "stateProvince",
+                "type": "nominal",
+                "title": "State"
+              },
+              {
+                "field": "year",
+                "type": "quantitative",
+                "title": "Year Recorded"
+              }
             ]
           }
         }
@@ -134,8 +260,13 @@
     }
   ],
   "config": {
-    "view": {"stroke": null},
+    "view": {
+      "stroke": null
+    },
     "font": "Source Sans 3",
-    "concat": {"spacing": 20}
+    "background": null,
+    "concat": {
+      "spacing": 20
+    }
   }
 }

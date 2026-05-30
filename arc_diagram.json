@@ -1,26 +1,60 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "background": null,
+  "padding": {
+    "top": 18,
+    "left": 20,
+    "right": 20,
+    "bottom": 16
+  },
   "title": {
     "text": "Who Threatens Whom: Invaders vs Native Species",
     "subtitle": "Line thickness shows number of native species threatened. Hover for details.",
+    "anchor": "start",
+    "offset": 8,
+    "font": "Source Sans 3",
     "fontSize": 16,
     "fontWeight": "bold",
+    "color": "#172A39",
+    "subtitleFont": "Source Sans 3",
     "subtitleFontSize": 12,
-    "anchor": "start",
-    "font": "Source Sans 3",
-    "subtitleFont": "Source Sans 3"
+    "subtitleColor": "#6E7575"
   },
-  "width": 600,
-  "height": 380,
+  "width": 560,
+  "height": 300,
   "layer": [
     {
-      "data": {"url": "data/arc_links.csv"},
-      "mark": {"type": "rule", "opacity": 0.45},
+      "data": {
+        "url": "data/arc_links.csv"
+      },
+      "mark": {
+        "type": "rule",
+        "opacity": 0.52,
+        "strokeCap": "round"
+      },
       "encoding": {
-        "x":  {"field": "x1", "type": "quantitative", "scale": {"domain": [-0.4, 1.4]}, "axis": null},
-        "y":  {"field": "y1", "type": "quantitative", "scale": {"domain": [0, 380]}, "axis": null},
-        "x2": {"field": "x2"},
-        "y2": {"field": "y2"},
+        "x": {
+          "field": "x1",
+          "type": "quantitative",
+          "scale": {
+            "domain": [-0.4, 1.4]
+          },
+          "axis": null
+        },
+        "y": {
+          "field": "y1",
+          "type": "quantitative",
+          "scale": {
+            "domain": [0, 300]
+          },
+          "axis": null
+        },
+        "x2": {
+          "field": "x2"
+        },
+        "y2": {
+          "field": "y2"
+        },
         "strokeWidth": {
           "field": "stroke_width",
           "type": "quantitative",
@@ -30,32 +64,56 @@
           "field": "n",
           "type": "quantitative",
           "scale": {
-            "range": ["#FDDCB5", "#D85A30", "#7B1D00"],
-            "domain": [0, 123]
+            "domain": [0, 123],
+            "range": ["#DDB7A0", "#C9784F", "#7B1D00"]
           },
           "legend": null
         },
         "tooltip": [
-          {"field": "invader",      "type": "nominal",      "title": "Invasive Species"},
-          {"field": "native_class", "type": "nominal",      "title": "Native Class Threatened"},
-          {"field": "n",            "type": "quantitative", "title": "Species Threatened"}
+          {
+            "field": "invader",
+            "type": "nominal",
+            "title": "Invasive Species"
+          },
+          {
+            "field": "native_class",
+            "type": "nominal",
+            "title": "Native Class Threatened"
+          },
+          {
+            "field": "n",
+            "type": "quantitative",
+            "title": "Species Threatened"
+          }
         ]
       }
     },
     {
-      "data": {"url": "data/arc_nodes.csv"},
-      "mark": {"type": "circle", "size": 80, "opacity": 1},
+      "data": {
+        "url": "data/arc_nodes.csv"
+      },
+      "mark": {
+        "type": "circle",
+        "size": 125,
+        "stroke": "#F8F4F0",
+        "strokeWidth": 1.5,
+        "opacity": 1
+      },
       "encoding": {
         "x": {
           "field": "x",
           "type": "quantitative",
-          "scale": {"domain": [-0.4, 1.4]},
+          "scale": {
+            "domain": [-0.4, 1.4]
+          },
           "axis": null
         },
         "y": {
           "field": "y",
           "type": "quantitative",
-          "scale": {"domain": [0, 380]},
+          "scale": {
+            "domain": [0, 380]
+          },
           "axis": null
         },
         "color": {
@@ -70,13 +128,105 @@
       }
     },
     {
-      "data": {"url": "data/arc_nodes.csv"},
-      "transform": [{"filter": "datum.side === 'invader'"}],
+      "data": {
+        "url": "data/arc_nodes.csv"
+      },
+      "transform": [
+        {
+          "filter": "datum.side === 'invader'"
+        }
+      ],
       "mark": {
         "type": "text",
         "font": "Source Sans 3",
         "fontSize": 12,
         "fontWeight": 600,
+        "align": "right",
+        "dx": -10,
+        "baseline": "middle",
+        "color": "#7B1D00"
+      },
+      "encoding": {
+        "x": {
+          "field": "x",
+          "type": "quantitative",
+          "scale": {
+            "domain": [-0.4, 1.4]
+          },
+          "axis": null
+        },
+        "y": {
+          "field": "y",
+          "type": "quantitative",
+          "scale": {
+            "domain": [0, 380]
+          },
+          "axis": null
+        },
+        "text": {
+          "field": "label",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "data": {
+        "url": "data/arc_nodes.csv"
+      },
+      "transform": [
+        {
+          "filter": "datum.side === 'native'"
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "font": "Source Sans 3",
+        "fontSize": 12,
+        "fontWeight": 600,
+        "align": "left",
+        "dx": 10,
+        "baseline": "middle",
+        "color": "#4A7C59"
+      },
+      "encoding": {
+        "x": {
+          "field": "x",
+          "type": "quantitative",
+          "scale": {
+            "domain": [-0.4, 1.4]
+          },
+          "axis": null
+        },
+        "y": {
+          "field": "y",
+          "type": "quantitative",
+          "scale": {
+            "domain": [0, 380]
+          },
+          "axis": null
+        },
+        "text": {
+          "field": "label",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "data": {
+        "values": [
+          {
+            "x": 0,
+            "y": 18,
+            "label": "INVASIVE SPECIES"
+          }
+        ]
+      },
+      "mark": {
+        "type": "text",
+        "font": "Source Sans 3",
+        "fontSize": 10,
+        "fontWeight": 700,
+        "letterSpacing": 1,
         "align": "right",
         "dx": -10,
         "color": "#7B1D00"
@@ -85,26 +235,41 @@
         "x": {
           "field": "x",
           "type": "quantitative",
-          "scale": {"domain": [-0.4, 1.4]},
+          "scale": {
+            "domain": [-0.4, 1.4]
+          },
           "axis": null
         },
         "y": {
           "field": "y",
           "type": "quantitative",
-          "scale": {"domain": [0, 380]},
+          "scale": {
+            "domain": [0, 380]
+          },
           "axis": null
         },
-        "text": {"field": "label", "type": "nominal"}
+        "text": {
+          "field": "label",
+          "type": "nominal"
+        }
       }
     },
     {
-      "data": {"url": "data/arc_nodes.csv"},
-      "transform": [{"filter": "datum.side === 'native'"}],
+      "data": {
+        "values": [
+          {
+            "x": 1,
+            "y": 18,
+            "label": "NATIVE CLASSES"
+          }
+        ]
+      },
       "mark": {
         "type": "text",
         "font": "Source Sans 3",
-        "fontSize": 12,
-        "fontWeight": 600,
+        "fontSize": 10,
+        "fontWeight": 700,
+        "letterSpacing": 1,
         "align": "left",
         "dx": 10,
         "color": "#4A7C59"
@@ -113,69 +278,72 @@
         "x": {
           "field": "x",
           "type": "quantitative",
-          "scale": {"domain": [-0.4, 1.4]},
+          "scale": {
+            "domain": [-0.4, 1.4]
+          },
           "axis": null
         },
         "y": {
           "field": "y",
           "type": "quantitative",
-          "scale": {"domain": [0, 380]},
+          "scale": {
+            "domain": [0, 380]
+          },
           "axis": null
         },
-        "text": {"field": "label", "type": "nominal"}
+        "text": {
+          "field": "label",
+          "type": "nominal"
+        }
       }
     },
     {
       "data": {
-        "values": [{"x": 0, "y": 18, "label": "INVASIVE SPECIES"}]
+        "values": [
+          {
+            "x": 0,
+            "y": 30,
+            "label": "↖ Most connected invader"
+          }
+        ]
       },
       "mark": {
         "type": "text",
         "font": "Source Sans 3",
         "fontSize": 10,
-        "fontWeight": 700,
-        "align": "right",
-        "dx": -10,
-        "color": "#7B1D00"
-      },
-      "encoding": {
-        "x": {
-          "field": "x",
-          "type": "quantitative",
-          "scale": {"domain": [-0.4, 1.4]},
-          "axis": null
-        },
-        "y": {"field": "y", "type": "quantitative", "scale": {"domain": [0, 380]}, "axis": null},
-        "text": {"field": "label", "type": "nominal"}
-      }
-    },
-    {
-      "data": {
-        "values": [{"x": 1, "y": 18, "label": "NATIVE CLASSES"}]
-      },
-      "mark": {
-        "type": "text",
-        "font": "Source Sans 3",
-        "fontSize": 10,
-        "fontWeight": 700,
+        "fontStyle": "italic",
         "align": "left",
-        "dx": 10,
-        "color": "#4A7C59"
+        "dx": 8,
+        "color": "#8A4B31"
       },
       "encoding": {
         "x": {
           "field": "x",
           "type": "quantitative",
-          "scale": {"domain": [-0.4, 1.4]},
+          "scale": {
+            "domain": [-0.4, 1.4]
+          },
           "axis": null
         },
-        "y": {"field": "y", "type": "quantitative", "scale": {"domain": [0, 380]}, "axis": null},
-        "text": {"field": "label", "type": "nominal"}
+        "y": {
+          "field": "y",
+          "type": "quantitative",
+          "scale": {
+            "domain": [0, 380]
+          },
+          "axis": null
+        },
+        "text": {
+          "field": "label",
+          "type": "nominal"
+        }
       }
     }
   ],
   "config": {
-    "view": {"stroke": null},
-    "font": "Source Sans 3"
+    "font": "Source Sans 3",
+    "view": {
+      "stroke": null
+    }
   }
 }

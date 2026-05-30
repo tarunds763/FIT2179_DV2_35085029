@@ -8,146 +8,191 @@
     "subtitleFontSize": 12,
     "anchor": "start",
     "font": "Source Sans 3",
-    "subtitleFont": "Source Sans 3"
+    "subtitleFont": "Source Sans 3",
+    "color": "#172A39",
+    "subtitleColor": "#6E7575"
   },
-  "width": 700,
-  "height": 300,
+  "width": 760,
+  "height": 220,
   "layer": [
     {
-      "data": {"values": [{}]},
-      "mark": {"type": "rule", "color": "#D3D1C7", "strokeWidth": 2},
+      "data": { "values": [{}] },
+      "mark": {
+        "type": "rule",
+        "color": "#CFCAC5",
+        "strokeWidth": 2
+      },
       "encoding": {
-        "x":  {"datum": 1780, "type": "quantitative", "scale": {"domain": [1780, 1990]}},
-        "x2": {"datum": 1990},
-        "y":  {"value": 150}
+        "x": {
+          "datum": 1780,
+          "type": "quantitative",
+          "scale": { "domain": [1780, 1990] }
+        },
+        "x2": { "datum": 1990 },
+        "y": { "value": 150 }
       }
     },
     {
       "data": {
         "values": [
-          {"species": "Feral Cat",    "year": 1788, "threatened": 123, "origin": "Europe",        "reason": "Brought as domestic pets by settlers"},
-          {"species": "Black Rat",    "year": 1788, "threatened": 20,  "origin": "Asia",          "reason": "Arrived on First Fleet ships"},
-          {"species": "Feral Pig",    "year": 1800, "threatened": 40,  "origin": "Europe",        "reason": "Brought as livestock, escaped into wild"},
-          {"species": "Feral Goat",   "year": 1840, "threatened": 35,  "origin": "Europe",        "reason": "Released from pastoral stations"},
-          {"species": "Euro. Rabbit", "year": 1859, "threatened": 322, "origin": "Europe",        "reason": "Released for sport hunting in Victoria"},
-          {"species": "Common Myna",  "year": 1862, "threatened": 15,  "origin": "Asia",          "reason": "Introduced to control insects in Melbourne"},
-          {"species": "Red Fox",      "year": 1871, "threatened": 99,  "origin": "Europe",        "reason": "Released for recreational fox hunting"},
-          {"species": "Cane Toad",    "year": 1935, "threatened": 55,  "origin": "South America", "reason": "Deliberately introduced to control beetles"},
-          {"species": "Euro. Wasp",   "year": 1977, "threatened": 10,  "origin": "Europe",        "reason": "Accidentally introduced via cargo"}
+          { "species": "Feral Cat", "year": 1788, "threatened": 123, "origin": "Europe", "reason": "Brought as domestic pets by settlers" },
+          { "species": "Black Rat", "year": 1788, "threatened": 20, "origin": "Asia", "reason": "Arrived on First Fleet ships" },
+          { "species": "Feral Pig", "year": 1800, "threatened": 40, "origin": "Europe", "reason": "Brought as livestock, escaped into wild" },
+          { "species": "Feral Goat", "year": 1840, "threatened": 35, "origin": "Europe", "reason": "Released from pastoral stations" },
+          { "species": "Euro. Rabbit", "year": 1859, "threatened": 322, "origin": "Europe", "reason": "Released for sport hunting in Victoria" },
+          { "species": "Common Myna", "year": 1862, "threatened": 15, "origin": "Asia", "reason": "Introduced to control insects in Melbourne" },
+          { "species": "Red Fox", "year": 1871, "threatened": 99, "origin": "Europe", "reason": "Released for recreational fox hunting" },
+          { "species": "Cane Toad", "year": 1935, "threatened": 55, "origin": "South America", "reason": "Deliberately introduced to control beetles" },
+          { "species": "Euro. Wasp", "year": 1977, "threatened": 10, "origin": "Europe", "reason": "Accidentally introduced via cargo" }
         ]
       },
       "mark": {
         "type": "point",
         "filled": true,
-        "opacity": 0.9,
+        "opacity": 0.92,
         "strokeWidth": 0
       },
       "encoding": {
         "x": {
           "field": "year",
           "type": "quantitative",
-          "scale": {"domain": [1780, 1990]},
+          "scale": { "domain": [1780, 1990] },
           "axis": {
             "title": "Year of Introduction",
             "grid": false,
             "tickCount": 11,
-            "format": "d"
+            "format": "d",
+            "titleFont": "Source Sans 3",
+            "titleFontSize": 12,
+            "titleColor": "#172A39",
+            "labelFont": "Source Sans 3",
+            "labelFontSize": 11,
+            "labelColor": "#6E7575",
+            "domainColor": "#CFCAC5",
+            "tickColor": "#CFCAC5"
           }
         },
-        "y": {"value": 150},
+        "y": { "value": 150 },
         "size": {
           "field": "threatened",
           "type": "quantitative",
-          "scale": {"range": [80, 1800]},
+          "scale": { "range": [80, 1800] },
           "legend": {
             "title": "Species Threatened",
             "orient": "bottom",
             "direction": "horizontal",
-            "values": [20, 100, 200, 322]
+            "values": [20, 100, 200, 322],
+            "titleFont": "Source Sans 3",
+            "titleFontSize": 11,
+            "titleColor": "#172A39",
+            "labelFont": "Source Sans 3",
+            "labelFontSize": 11,
+            "labelColor": "#6E7575",
+            "symbolStrokeColor": "#CFCAC5"
           }
         },
         "color": {
           "field": "threatened",
           "type": "quantitative",
           "scale": {
-            "range": ["#FDDCB5", "#D85A30", "#7B1D00"],
-            "domain": [0, 322]
+            "domain": [0, 322],
+            "range": ["#E9E4E0", "#C97A56", "#7B1D00"]
           },
           "legend": null
         },
         "tooltip": [
-          {"field": "species",    "type": "nominal",      "title": "Species"},
-          {"field": "year",       "type": "quantitative", "title": "Year Introduced"},
-          {"field": "origin",     "type": "nominal",      "title": "Origin"},
-          {"field": "threatened", "type": "quantitative", "title": "Species Threatened"},
-          {"field": "reason",     "type": "nominal",      "title": "Why Introduced"}
+          { "field": "species", "type": "nominal", "title": "Species" },
+          { "field": "year", "type": "quantitative", "title": "Year Introduced" },
+          { "field": "origin", "type": "nominal", "title": "Origin" },
+          { "field": "threatened", "type": "quantitative", "title": "Species Threatened" },
+          { "field": "reason", "type": "nominal", "title": "Why Introduced" }
         ]
       }
     },
     {
       "data": {
         "values": [
-          {"species": "Feral Cat",    "year": 1788},
-          {"species": "Euro. Rabbit", "year": 1859}
+          { "species": "Feral Cat", "year": 1788 },
+          { "species": "Euro. Rabbit", "year": 1859 }
         ]
       },
       "mark": {
         "type": "text",
         "fontSize": 11,
         "font": "Source Sans 3",
-        "color": "#1A1A18",
+        "color": "#172A39",
         "fontWeight": "bold",
         "align": "center",
         "dy": -50
       },
       "encoding": {
-        "x": {"field": "year", "type": "quantitative", "scale": {"domain": [1780, 1990]}},
-        "y": {"value": 150},
-        "text": {"field": "species", "type": "nominal"}
+        "x": {
+          "field": "year",
+          "type": "quantitative",
+          "scale": { "domain": [1780, 1990] }
+        },
+        "y": { "value": 150 },
+        "text": { "field": "species", "type": "nominal" }
       }
     },
     {
       "data": {
         "values": [
-          {"species": "Red Fox",   "year": 1871},
-          {"species": "Cane Toad", "year": 1935}
+          { "species": "Red Fox", "year": 1871 },
+          { "species": "Cane Toad", "year": 1935 }
         ]
       },
       "mark": {
         "type": "text",
         "fontSize": 11,
         "font": "Source Sans 3",
-        "color": "#1A1A18",
+        "color": "#172A39",
         "fontWeight": "bold",
         "align": "center",
         "dy": 44
       },
       "encoding": {
-        "x": {"field": "year", "type": "quantitative", "scale": {"domain": [1780, 1990]}},
-        "y": {"value": 150},
-        "text": {"field": "species", "type": "nominal"}
+        "x": {
+          "field": "year",
+          "type": "quantitative",
+          "scale": { "domain": [1780, 1990] }
+        },
+        "y": { "value": 150 },
+        "text": { "field": "species", "type": "nominal" }
       }
     },
     {
-      "data": {"values": [{"species": "Black Rat", "year": 1788}]},
+      "data": {
+        "values": [
+          { "species": "Black Rat", "year": 1788 }
+        ]
+      },
       "mark": {
         "type": "text",
         "fontSize": 10,
         "font": "Source Sans 3",
-        "color": "#1A1A18",
+        "color": "#6E7575",
         "align": "left",
         "dy": 44,
         "dx": 38
       },
       "encoding": {
-        "x": {"field": "year", "type": "quantitative", "scale": {"domain": [1780, 1990]}},
-        "y": {"value": 150},
-        "text": {"field": "species", "type": "nominal"}
+        "x": {
+          "field": "year",
+          "type": "quantitative",
+          "scale": { "domain": [1780, 1990] }
+        },
+        "y": { "value": 150 },
+        "text": { "field": "species", "type": "nominal" }
       }
     }
   ],
   "config": {
-    "view": {"stroke": null},
-    "font": "Source Sans 3"
+    "view": { "stroke": null },
+    "font": "Source Sans 3",
+    "background": null,
+    "axis": {
+      "gridColor": "#E9E4E0"
+    }
   }
 }

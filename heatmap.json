@@ -1,21 +1,31 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "background": null,
+  "autosize": { "type": "fit", "contains": "padding" },
   "title": {
     "text": "Threatened Species Across States and Animal Classes",
-    "subtitle": "Number of species listed under the EPBC Act per state. Source: data.gov.au, February 2026.",
+    "subtitle": "Number of species listed under the EPBC Act per state.",
     "fontSize": 16,
     "fontWeight": "bold",
     "subtitleFontSize": 12,
     "anchor": "start",
+    "color": "#172A39",
+    "subtitleColor": "#6E7575",
     "font": "Source Sans 3",
-    "subtitleFont": "Source Sans 3"
+    "subtitleFont": "Source Sans 3",
+    "offset": 8
   },
   "width": 560,
-  "height": 240,
-  "data": {"url": "data/epbc_heatmap.csv"},
+  "height": 320,
+  "padding": { "top": 10, "left": 10, "right": 10, "bottom": 6 },
+  "data": { "url": "data/epbc_heatmap.csv" },
   "layer": [
     {
-      "mark": {"type": "rect"},
+      "mark": {
+        "type": "rect",
+        "stroke": "#F4F0EB",
+        "strokeWidth": 0.8
+      },
       "encoding": {
         "x": {
           "field": "state",
@@ -25,7 +35,10 @@
             "title": null,
             "labelFont": "Source Sans 3",
             "labelFontSize": 12,
+            "labelColor": "#6E7575",
             "labelAngle": 0,
+            "domain": false,
+            "tickColor": "rgba(23,42,57,0.08)",
             "grid": false
           }
         },
@@ -37,6 +50,9 @@
             "title": null,
             "labelFont": "Source Sans 3",
             "labelFontSize": 12,
+            "labelColor": "#6E7575",
+            "domain": false,
+            "tickColor": "rgba(23,42,57,0.08)",
             "grid": false
           }
         },
@@ -44,23 +60,26 @@
           "field": "count",
           "type": "quantitative",
           "scale": {
-            "range": ["#FFF3EE", "#FDDCB5", "#D85A30", "#7B1D00"],
+            "range": ["#EEE8E2", "#D8CEC4", "#B7B4AC", "#6C7680", "#1F3040"],
             "domain": [0, 91]
           },
           "legend": {
             "title": "Species Count",
-            "orient": "right",
+            "orient": "bottom",
+            "direction": "horizontal",
             "titleFont": "Source Sans 3",
             "labelFont": "Source Sans 3",
+            "titleColor": "#172A39",
+            "labelColor": "#6E7575",
             "titleFontSize": 11,
             "labelFontSize": 11,
-            "gradientLength": 120
+            "gradientLength": 180
           }
         },
         "tooltip": [
-          {"field": "state",       "type": "nominal",      "title": "State"},
-          {"field": "class_label", "type": "nominal",      "title": "Animal Class"},
-          {"field": "count",       "type": "quantitative", "title": "Species Threatened"}
+          { "field": "state", "type": "nominal", "title": "State" },
+          { "field": "class_label", "type": "nominal", "title": "Animal Class" },
+          { "field": "count", "type": "quantitative", "title": "Species Threatened" }
         ]
       }
     },
@@ -69,7 +88,7 @@
         "type": "text",
         "fontSize": 11,
         "font": "Source Sans 3",
-        "fontWeight": 400
+        "fontWeight": 500
       },
       "encoding": {
         "x": {
@@ -82,43 +101,16 @@
           "type": "nominal",
           "sort": ["Birds", "Mammals", "Reptiles", "Fish", "Amphibians", "Insects"]
         },
-        "text": {
-          "field": "count",
-          "type": "quantitative"
-        },
+        "text": { "field": "count", "type": "quantitative" },
         "color": {
-          "condition": {"test": "datum.count > 50", "value": "#FFFFFF"},
-          "value": "#1A1A18"
+          "condition": { "test": "datum.count >= 55", "value": "#FFFFFF" },
+          "value": "#172A39"
         }
-      }
-    },
-    {
-      "data": {"values": [{"state": "NSW", "class_label": "Birds", "label": "Hotspot"}]},
-      "mark": {
-        "type": "text",
-        "fontSize": 10,
-        "fontWeight": 700,
-        "font": "Source Sans 3",
-        "color": "#FFFFFF",
-        "dy": -10
-      },
-      "encoding": {
-        "x": {
-          "field": "state",
-          "type": "nominal",
-          "sort": ["NSW", "QLD", "VIC", "WA", "SA", "TAS", "NT", "ACT"]
-        },
-        "y": {
-          "field": "class_label",
-          "type": "nominal",
-          "sort": ["Birds", "Mammals", "Reptiles", "Fish", "Amphibians", "Insects"]
-        },
-        "text": {"field": "label", "type": "nominal"}
       }
     }
   ],
   "config": {
-    "view": {"stroke": null},
+    "view": { "stroke": null, "fill": null },
     "font": "Source Sans 3"
   }
 }

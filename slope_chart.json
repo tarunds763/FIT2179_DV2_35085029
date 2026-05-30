@@ -6,21 +6,31 @@
     "fontSize": 16,
     "fontWeight": "bold",
     "subtitleFontSize": 12,
+    "subtitleLimit": 320,
     "anchor": "start",
     "font": "Source Sans 3",
     "subtitleFont": "Source Sans 3"
   },
-  "width": 400,
-  "height": 380,
-  "data": {"url": "data/slope_chart.csv"},
+  "width": 360,
+  "height": 300,
+  "background": null,
+  "data": {
+    "url": "data/slope_chart.csv"
+  },
   "layer": [
     {
-      "mark": {"type": "line", "strokeWidth": 2.5},
+      "mark": {
+        "type": "line",
+        "strokeWidth": 2.8
+      },
       "encoding": {
         "x": {
           "field": "period",
           "type": "nominal",
-          "sort": {"field": "period_order", "order": "ascending"},
+          "sort": {
+            "field": "period_order",
+            "order": "ascending"
+          },
           "axis": {
             "title": null,
             "labelFont": "Source Sans 3",
@@ -34,7 +44,12 @@
         "y": {
           "field": "index",
           "type": "quantitative",
-          "scale": {"domain": [-15, 112]},
+          "scale": {
+            "domain": [
+              -15,
+              112
+            ]
+          },
           "axis": {
             "title": "Population Index (Before = 100)",
             "titleFont": "Source Sans 3",
@@ -42,15 +57,26 @@
             "labelFont": "Source Sans 3",
             "grid": true,
             "gridColor": "#E0DDD5",
-            "gridDash": [3, 3]
+            "gridDash": [
+              3,
+              3
+            ]
           }
         },
         "color": {
           "field": "outcome",
           "type": "nominal",
           "scale": {
-            "domain": ["Eradicated", "Reduced", "Ongoing"],
-            "range": ["#4A7C59", "#D85A30", "#C8C4B6"]
+            "domain": [
+              "Eradicated",
+              "Reduced",
+              "Ongoing"
+            ],
+            "range": [
+              "#4A7C59",
+              "#D85A30",
+              "#9B9688"
+            ]
           },
           "legend": {
             "title": "Program Outcome",
@@ -62,38 +88,84 @@
             "labelFontSize": 11
           }
         },
-        "detail": {"field": "program", "type": "nominal"},
+        "detail": {
+          "field": "program",
+          "type": "nominal"
+        },
         "tooltip": [
-          {"field": "program", "type": "nominal",      "title": "Program"},
-          {"field": "species", "type": "nominal",      "title": "Species"},
-          {"field": "years",   "type": "nominal",      "title": "Years"},
-          {"field": "index",   "type": "quantitative", "title": "Population Index"},
-          {"field": "outcome", "type": "nominal",      "title": "Outcome"}
+          {
+            "field": "program",
+            "type": "nominal",
+            "title": "Program"
+          },
+          {
+            "field": "species",
+            "type": "nominal",
+            "title": "Species"
+          },
+          {
+            "field": "years",
+            "type": "nominal",
+            "title": "Years"
+          },
+          {
+            "field": "index",
+            "type": "quantitative",
+            "title": "Population Index"
+          },
+          {
+            "field": "outcome",
+            "type": "nominal",
+            "title": "Outcome"
+          }
         ]
       }
     },
     {
-      "mark": {"type": "point", "filled": true, "size": 60, "strokeWidth": 0},
+      "mark": {
+        "type": "point",
+        "filled": true,
+        "size": 70,
+        "strokeWidth": 1.2
+      },
       "encoding": {
         "x": {
           "field": "period",
           "type": "nominal",
-          "sort": {"field": "period_order", "order": "ascending"}
+          "sort": {
+            "field": "period_order",
+            "order": "ascending"
+          }
         },
-        "y": {"field": "index", "type": "quantitative"},
+        "y": {
+          "field": "index",
+          "type": "quantitative"
+        },
         "color": {
           "field": "outcome",
           "type": "nominal",
           "scale": {
-            "domain": ["Eradicated", "Reduced", "Ongoing"],
-            "range": ["#4A7C59", "#D85A30", "#C8C4B6"]
+            "domain": [
+              "Eradicated",
+              "Reduced",
+              "Ongoing"
+            ],
+            "range": [
+              "#4A7C59",
+              "#D85A30",
+              "#C8C4B6"
+            ]
           },
           "legend": null
         }
       }
     },
     {
-      "transform": [{"filter": "datum.period === 'After'"}],
+      "transform": [
+        {
+          "filter": "datum.period === 'After'"
+        }
+      ],
       "mark": {
         "type": "text",
         "align": "left",
@@ -106,45 +178,43 @@
         "x": {
           "field": "period",
           "type": "nominal",
-          "sort": {"field": "period_order", "order": "ascending"}
+          "sort": {
+            "field": "period_order",
+            "order": "ascending"
+          }
         },
-        "y": {"field": "label_y", "type": "quantitative"},
-        "text": {"field": "program", "type": "nominal"},
+        "y": {
+          "field": "label_y",
+          "type": "quantitative"
+        },
+        "text": {
+          "field": "program",
+          "type": "nominal"
+        },
         "color": {
           "field": "outcome",
           "type": "nominal",
           "scale": {
-            "domain": ["Eradicated", "Reduced", "Ongoing"],
-            "range": ["#4A7C59", "#D85A30", "#C8C4B6"]
+            "domain": [
+              "Eradicated",
+              "Reduced",
+              "Ongoing"
+            ],
+            "range": [
+              "#4A7C59",
+              "#D85A30",
+              "#C8C4B6"
+            ]
           },
           "legend": null
         }
       }
-    },
-    {
-      "data": {"values": [{"period": "Before", "index": 20, "label": "3 programs → zero ↓"}]},
-      "mark": {
-        "type": "text",
-        "align": "left",
-        "dx": 4,
-        "fontSize": 11,
-        "fontWeight": 700,
-        "font": "Source Sans 3",
-        "color": "#4A7C59"
-      },
-      "encoding": {
-        "x": {
-          "field": "period",
-          "type": "nominal",
-          "sort": {"field": "period_order", "order": "ascending"}
-        },
-        "y": {"field": "index", "type": "quantitative"},
-        "text": {"field": "label", "type": "nominal"}
-      }
     }
   ],
   "config": {
-    "view": {"stroke": null},
+    "view": {
+      "stroke": null
+    },
     "font": "Source Sans 3"
   }
 }

@@ -1,0 +1,281 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "39 Mammals Lost Forever",
+    "subtitle": "Every mammal species driven to extinction in Australia since European settlement. Hover for details. Click the legend to isolate a primary cause.",
+    "fontSize": 16,
+    "fontWeight": "bold",
+    "subtitleFontSize": 12,
+    "anchor": "start",
+    "font": "Source Sans 3",
+    "subtitleFont": "Source Sans 3",
+    "color": "#172A39",
+    "subtitleColor": "#6E7575"
+  },
+  "width": 740,
+  "height": 340,
+  "data": {
+    "url": "data/extinct_mammals.csv"
+  },
+  "layer": [
+    {
+      "params": [
+        {
+          "name": "causeSelect",
+          "select": {
+            "type": "point",
+            "fields": [
+              "cause"
+            ]
+          },
+          "bind": "legend"
+        }
+      ],
+      "mark": {
+        "type": "circle",
+        "filled": true,
+        "size": 900,
+        "opacity": 0.94,
+        "stroke": "#F7F3EE",
+        "strokeWidth": 1.2
+      },
+      "encoding": {
+        "x": {
+          "field": "col",
+          "type": "quantitative",
+          "scale": {
+            "domain": [
+              -0.5,
+              7.5
+            ]
+          },
+          "axis": null
+        },
+        "y": {
+          "field": "row",
+          "type": "quantitative",
+          "scale": {
+            "domain": [
+              -0.5,
+              5.2
+            ]
+          },
+          "axis": null,
+          "sort": "descending"
+        },
+        "color": {
+          "field": "cause",
+          "type": "nominal",
+          "scale": {
+            "domain": [
+              "Feral Cat",
+              "Red Fox",
+              "Black Rat",
+              "Hunting",
+              "Habitat Loss"
+            ],
+            "range": [
+              "#8A3B12",
+              "#D06A1B",
+              "#2E8B7D",
+              "#6C63A8",
+              "#8B8680"
+            ]
+          },
+          "legend": {
+            "title": "Primary Cause of Extinction",
+            "orient": "bottom",
+            "direction": "horizontal",
+            "titleFont": "Source Sans 3",
+            "labelFont": "Source Sans 3",
+            "titleFontSize": 11,
+            "labelFontSize": 11,
+            "titleColor": "#172A39",
+            "labelColor": "#6E7575",
+            "symbolSize": 170,
+            "symbolStrokeWidth": 0,
+            "padding": 12
+          }
+        },
+        "opacity": {
+          "condition": {
+            "param": "causeSelect",
+            "empty": true,
+            "value": 0.94
+          },
+          "value": 0.14
+        },
+        "tooltip": [
+          {
+            "field": "common_name",
+            "type": "nominal",
+            "title": "Species"
+          },
+          {
+            "field": "cause",
+            "type": "nominal",
+            "title": "Primary Cause"
+          },
+          {
+            "field": "year_extinct",
+            "type": "quantitative",
+            "title": "Last recorded"
+          }
+        ]
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "fontSize": 9,
+        "font": "Source Sans 3",
+        "fontWeight": 500,
+        "dy": 22,
+        "align": "center",
+        "color": "#6E7575"
+      },
+      "encoding": {
+        "x": {
+          "field": "col",
+          "type": "quantitative",
+          "scale": {
+            "domain": [
+              -0.5,
+              7.5
+            ]
+          },
+          "axis": null
+        },
+        "y": {
+          "field": "row",
+          "type": "quantitative",
+          "scale": {
+            "domain": [
+              -0.5,
+              5.2
+            ]
+          },
+          "axis": null,
+          "sort": "descending"
+        },
+        "text": {
+          "field": "short_name",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "data": {
+        "values": [
+          {
+            "col": 6.42,
+            "row": 4.02,
+            "label": "Most extinctions linked"
+          },
+          {
+            "col": 6.42,
+            "row": 4.22,
+            "label": "to feral cats"
+          }
+        ]
+      },
+      "mark": {
+        "type": "text",
+        "font": "Source Sans 3",
+        "fontSize": 10,
+        "fontStyle": "italic",
+        "fontWeight": 600,
+        "align": "left",
+        "baseline": "middle",
+        "dx": 6,
+        "color": "#7A4A33"
+      },
+      "encoding": {
+        "x": {
+          "field": "col",
+          "type": "quantitative",
+          "scale": {
+            "domain": [
+              -0.5,
+              7.5
+            ]
+          },
+          "axis": null
+        },
+        "y": {
+          "field": "row",
+          "type": "quantitative",
+          "scale": {
+            "domain": [
+              -0.5,
+              5.2
+            ]
+          },
+          "axis": null
+        },
+        "text": {
+          "field": "label",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "data": {
+        "values": [
+          {
+            "col": 6.52,
+            "row": 3.82,
+            "label": "Last extinction: 2016"
+          }
+        ]
+      },
+      "mark": {
+        "type": "text",
+        "fontSize": 10,
+        "font": "Source Sans 3",
+        "fontWeight": 700,
+        "fontStyle": "italic",
+        "align": "left",
+        "baseline": "middle",
+        "dx": 0,
+        "dy": -1,
+        "color": "#7F7A74"
+      },
+      "encoding": {
+        "x": {
+          "field": "col",
+          "type": "quantitative",
+          "scale": {
+            "domain": [
+              -0.5,
+              7.5
+            ]
+          },
+          "axis": null
+        },
+        "y": {
+          "field": "row",
+          "type": "quantitative",
+          "scale": {
+            "domain": [
+              -0.5,
+              5.2
+            ]
+          },
+          "axis": null
+        },
+        "text": {
+          "field": "label",
+          "type": "nominal"
+        }
+      }
+    }
+  ],
+  "config": {
+    "view": {
+      "stroke": null
+    },
+    "font": "Source Sans 3",
+    "background": null
+  }
+}

@@ -1,0 +1,406 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Which Invaders Should Australia Prioritise?",
+    "subtitle": "Upper-left bubbles combine high cost with weaker management coverage. Bubble size shows threatened species; colour shows control status.",
+    "fontSize": 18,
+    "fontWeight": 700,
+    "subtitleFontSize": 12,
+    "anchor": "start",
+    "offset": 14,
+    "font": "Source Sans 3",
+    "subtitleFont": "Source Sans 3",
+    "color": "#1A1A18",
+    "subtitleColor": "#6B6B65"
+  },
+  "width": 640,
+  "height": 420,
+  "padding": {
+    "left": 8,
+    "right": 24,
+    "top": 10,
+    "bottom": 0
+  },
+  "data": {
+    "url": "data/priority_scatter.csv"
+  },
+  "layer": [
+    {
+      "mark": {
+        "type": "rect",
+        "opacity": 0.45,
+        "color": "#EED8CD"
+      },
+      "encoding": {
+        "x": {
+          "datum": 0,
+          "type": "quantitative"
+        },
+        "x2": {
+          "datum": 30
+        },
+        "y": {
+          "datum": 1.0,
+          "type": "quantitative"
+        },
+        "y2": {
+          "datum": 5
+        }
+      }
+    },
+    {
+      "mark": {
+        "type": "rule",
+        "stroke": "#BEB8AE",
+        "strokeDash": [
+          4,
+          4
+        ],
+        "strokeWidth": 1.1
+      },
+      "encoding": {
+        "x": {
+          "datum": 30
+        }
+      }
+    },
+    {
+      "mark": {
+        "type": "rule",
+        "stroke": "#BEB8AE",
+        "strokeDash": [
+          5,
+          5
+        ],
+        "strokeWidth": 1.2
+      },
+      "encoding": {
+        "y": {
+          "datum": 1.0
+        }
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "fontSize": 9,
+        "font": "Source Sans 3",
+        "fontWeight": 700,
+        "align": "left",
+        "baseline": "top",
+        "color": "#531502",
+        "opacity": 0.52,
+        "letterSpacing": 1.2,
+        "x": 10,
+        "y": 10
+      },
+      "encoding": {
+        "text": {
+          "value": "PRIORITY ZONE"
+        }
+      }
+    },
+    {
+      "params": [
+        {
+          "name": "statusFilter",
+          "select": {
+            "type": "point",
+            "fields": [
+              "control_status"
+            ]
+          },
+          "bind": "legend"
+        }
+      ],
+      "mark": {
+        "type": "circle",
+        "stroke": "#2B2620",
+        "strokeWidth": 1.5
+      },
+      "encoding": {
+        "x": {
+          "field": "management_coverage",
+          "type": "quantitative",
+          "title": "Management Coverage Index",
+          "scale": {
+            "domain": [
+              0,
+              65
+            ],
+            "nice": false
+          },
+          "axis": {
+            "values": [
+              0,
+              10,
+              20,
+              30,
+              40,
+              50,
+              60
+            ],
+            "grid": true,
+            "gridColor": "#E0DDD5",
+            "gridDash": [
+              3,
+              3
+            ],
+            "titleFont": "Source Sans 3",
+            "titleFontSize": 12,
+            "titlePadding": 12,
+            "labelFont": "Source Sans 3",
+            "labelColor": "#4D4B46",
+            "domainColor": "#A9A39A",
+            "tickColor": "#A9A39A"
+          }
+        },
+        "y": {
+          "field": "annual_cost_usd",
+          "type": "quantitative",
+          "title": "Annual Economic Cost (USD billions)",
+          "scale": {
+            "domain": [
+              0,
+              5
+            ],
+            "nice": false
+          },
+          "axis": {
+            "values": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "format": "$,.1f",
+            "grid": true,
+            "gridColor": "#ECE7E0",
+            "gridDash": [
+              3,
+              3
+            ],
+            "titleFont": "Source Sans 3",
+            "titleFontSize": 12,
+            "titlePadding": 12,
+            "labelFont": "Source Sans 3",
+            "labelColor": "#4D4B46",
+            "domainColor": "#A9A39A",
+            "tickColor": "#A9A39A"
+          }
+        },
+        "size": {
+          "field": "threatened_species",
+          "type": "quantitative",
+          "scale": {
+            "range": [
+              120,
+              2200
+            ]
+          },
+          "legend": {
+            "title": "Threatened species",
+            "orient": "bottom",
+            "direction": "horizontal",
+            "symbolType": "circle",
+            "titleFont": "Source Sans 3",
+            "labelFont": "Source Sans 3",
+            "titleFontSize": 11,
+            "labelFontSize": 11,
+            "values": [
+              20,
+              100,
+              200,
+              322
+            ],
+            "symbolStrokeColor": "#7A766F",
+            "symbolFillColor": "#F6F1EB",
+            "offset": 18
+          }
+        },
+        "color": {
+          "field": "control_status",
+          "type": "nominal",
+          "scale": {
+            "domain": [
+              "Eradicable",
+              "Reducible",
+              "Intractable"
+            ],
+            "range": [
+              "#548c65",
+              "#f0853e",
+              "#612404"
+            ]
+          },
+          "legend": {
+            "title": "Control status — click to filter",
+            "orient": "bottom",
+            "direction": "horizontal",
+            "titleFont": "Source Sans 3",
+            "labelFont": "Source Sans 3",
+            "titleFontSize": 11,
+            "labelFontSize": 11,
+            "symbolStrokeColor": "#2B2620",
+            "symbolSize": 140,
+            "offset": 6
+          }
+        },
+        "opacity": {
+          "condition": {
+            "param": "statusFilter",
+            "empty": true,
+            "value": 0.92
+          },
+          "value": 0.14
+        },
+        "tooltip": [
+          {
+            "field": "species",
+            "type": "nominal",
+            "title": "Species"
+          },
+          {
+            "field": "annual_cost_usd",
+            "type": "quantitative",
+            "title": "Annual cost (USD B)",
+            "format": "$,.1f"
+          },
+          {
+            "field": "management_coverage",
+            "type": "quantitative",
+            "title": "Management coverage index"
+          },
+          {
+            "field": "threatened_species",
+            "type": "quantitative",
+            "title": "Threatened species"
+          },
+          {
+            "field": "control_status",
+            "type": "nominal",
+            "title": "Control status"
+          },
+          {
+            "field": "states_affected",
+            "type": "quantitative",
+            "title": "States affected"
+          },
+          {
+            "field": "priority_score",
+            "type": "quantitative",
+            "title": "Priority score",
+            "format": ".1f"
+          }
+        ]
+      }
+    },
+    {
+      "data": {
+        "values": [
+          {
+            "x": 1,
+            "y": 4.72,
+            "label": "High cost,\nlow coverage"
+          }
+        ]
+      },
+      "mark": {
+        "type": "text",
+        "font": "Source Sans 3",
+        "fontSize": 10,
+        "fontStyle": "italic",
+        "align": "left",
+        "baseline": "top",
+        "color": "#7A4A33"
+      },
+      "encoding": {
+        "x": {
+          "field": "x",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "y",
+          "type": "quantitative"
+        },
+        "text": {
+          "field": "label"
+        }
+      }
+    },
+    {
+      "transform": [
+        {
+          "filter": {
+            "oneOf": [
+              "Feral Cat",
+              "European Rabbit",
+              "Red Fox"
+            ],
+            "field": "species"
+          }
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "fontSize": 11,
+        "font": "Source Sans 3",
+        "fontWeight": 700,
+        "align": "center",
+        "baseline": "bottom",
+        "dy": -24,
+        "limit": 120
+      },
+      "encoding": {
+        "x": {
+          "field": "management_coverage",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "annual_cost_usd",
+          "type": "quantitative"
+        },
+        "text": {
+          "field": "species",
+          "type": "nominal"
+        },
+        "opacity": {
+          "condition": {
+            "param": "statusFilter",
+            "empty": true,
+            "value": 1
+          },
+          "value": 0.14
+        },
+        "color": {
+          "value": "#1A1A18"
+        }
+      }
+    }
+  ],
+  "resolve": {
+    "legend": {
+      "color": "independent",
+      "size": "independent"
+    }
+  },
+  "config": {
+    "view": {
+      "stroke": null
+    },
+    "font": "Source Sans 3",
+    "background": null,
+    "axis": {
+      "titleColor": "#1A1A18",
+      "labelColor": "#4D4B46"
+    },
+    "legend": {
+      "titleColor": "#1A1A18",
+      "labelColor": "#4D4B46",
+      "padding": 6,
+      "symbolStrokeWidth": 1.2
+    }
+  }
+}

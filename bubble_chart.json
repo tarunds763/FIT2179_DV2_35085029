@@ -2,16 +2,19 @@
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
     "title": {
         "text": "The Price of Invasion: Economic Cost by Species",
-        "subtitle": "Total estimated cost per year in 2017 USD. Bubble size and colour reflect total economic damage",
-        "fontSize": 16,
+        "subtitle": "Estimated annual economic cost in 2017 USD. Bubble size and colour intensify with the scale of damage.",
+        "fontSize": 18,
         "fontWeight": "bold",
         "subtitleFontSize": 12,
         "anchor": "start",
         "font": "Source Sans 3",
-        "subtitleFont": "Source Sans 3"
+        "subtitleFont": "Source Sans 3",
+        "color": "#1A1A18",
+        "subtitleColor": "#6B6B65",
+        "offset": 14
     },
-    "width": 650,
-    "height": 380,
+    "width": 410,
+    "height": 320,
     "data": {
         "url": "data/invacost_bubble.csv"
     },
@@ -19,9 +22,9 @@
         {
             "mark": {
                 "type": "circle",
-                "opacity": 0.85,
-                "stroke": "#FAFAF7",
-                "strokeWidth": 1.5
+                "opacity": 0.92,
+                "stroke": "#F6F2EB",
+                "strokeWidth": 2.2
             },
             "encoding": {
                 "x": {
@@ -30,25 +33,53 @@
                     "sort": "-y",
                     "axis": {
                         "title": null,
-                        "labelAngle": -45,
-                        "labelFontSize": 12,
+                        "labelAngle": -26,
+                        "labelFontSize": 11,
                         "labelFont": "Source Sans 3",
+                        "labelColor": "#3A3A36",
+                        "labelPadding": 12,
+                        "ticks": true,
+                        "tickColor": "#948A80",
+                        "tickSize": 5,
+                        "domainColor": "#948A80",
+                        "domainWidth": 1.2,
                         "grid": false
                     }
                 },
                 "y": {
                     "field": "cost_billions",
                     "type": "quantitative",
+                    "scale": {
+                        "domain": [
+                            0,
+                            4.9
+                        ]
+                    },
                     "axis": {
                         "title": "Cost per Year (USD billions, 2017)",
                         "titleFont": "Source Sans 3",
                         "titleFontSize": 12,
+                        "titleColor": "#1A1A18",
+                        "titlePadding": 12,
                         "labelFont": "Source Sans 3",
+                        "labelFontSize": 11,
+                        "labelColor": "#3A3A36",
                         "grid": true,
-                        "gridColor": "#E0DDD5",
+                        "gridColor": "#E5DED5",
                         "gridDash": [
                             3,
-                            3
+                            4
+                        ],
+                        "gridOpacity": 0.75,
+                        "tickColor": "#948A80",
+                        "domain": false,
+                        "values": [
+                            0,
+                            1,
+                            2,
+                            3,
+                            4,
+                            5
                         ]
                     }
                 },
@@ -56,10 +87,7 @@
                     "field": "cost_billions",
                     "type": "quantitative",
                     "scale": {
-                        "range": [
-                            200,
-                            4000
-                        ]
+                        "range": [140, 1800]
                     },
                     "legend": null
                 },
@@ -67,14 +95,15 @@
                     "field": "cost_billions",
                     "type": "quantitative",
                     "scale": {
-                        "range": [
-                            "#FDDCB5",
-                            "#D85A30",
-                            "#7B1D00"
-                        ],
                         "domain": [
                             0,
                             4.1
+                        ],
+                        "range": [
+                            "#D8A978",
+                            "#C97C4B",
+                            "#A85636",
+                            "#7B1D00"
                         ]
                     },
                     "legend": null
@@ -100,22 +129,23 @@
             }
         },
         {
-            "mark": {
-                "type": "text",
-                "fontSize": 11,
-                "font": "Source Sans 3",
-                "fontWeight": "bold",
-                "color": "#7B1D00",
-                "align": "left",
-                "baseline": "bottom",
-                "dx": 10,
-                "dy": -12
-            },
             "transform": [
                 {
                     "filter": "datum.common_name === 'Feral Cat'"
                 }
             ],
+            "mark": {
+                "type": "text",
+                "fontSize": 11,
+                "font": "Source Sans 3",
+                "fontWeight": 600,
+                "fontStyle": "italic",
+                "color": "#7B1D00",
+                "align": "left",
+                "baseline": "middle",
+                "dx": 28,
+                "dy": 0
+            },
             "encoding": {
                 "x": {
                     "field": "common_name",
@@ -127,7 +157,7 @@
                     "type": "quantitative"
                 },
                 "text": {
-                    "value": "← Highest cost species"
+                    "value": "<- Highest annual cost"
                 }
             }
         }
@@ -136,6 +166,7 @@
         "view": {
             "stroke": null
         },
-        "font": "Source Sans 3"
+        "font": "Source Sans 3",
+        "background": null
     }
 }

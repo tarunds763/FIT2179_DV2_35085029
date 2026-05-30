@@ -1,0 +1,40 @@
+id,common_name,short_name,year_extinct,cause,col,row
+1,Desert Bettong,Desert Bettong,1935,Feral Cat,0,0
+2,Boodie (inland),Boodie,1960,Feral Cat,1,0
+3,Brush-tailed Bettong (mainland),Brush-tailed Bettong,1960,Feral Cat,2,0
+4,Nullarbor Dwarf Bettong,Nullarbor Bettong,1875,Feral Cat,3,0
+5,Desert Rat-kangaroo,Desert Rat-kangaroo,1935,Feral Cat,4,0
+6,Pig-footed Bandicoot,Pig-footed Bandicoot,1950,Feral Cat,5,0
+7,Northern Pig-footed Bandicoot,N. Pig-footed Bandicoot,1950,Feral Cat,6,0
+8,Central Hare-wallaby,Central Hare-wallaby,1935,Feral Cat,7,0
+9,Lesser Stick-nest Rat,Stick-nest Rat,1933,Feral Cat,0,1
+10,Lesser Bilby,Lesser Bilby,1950,Feral Cat,1,1
+11,Desert Bandicoot,Desert Bandicoot,1943,Feral Cat,2,1
+12,Butterfly Bandicoot,Butterfly Bandicoot,1930,Feral Cat,3,1
+13,Blue-grey Mouse,Blue-grey Mouse,1956,Feral Cat,4,1
+14,Crescent Nailtail Wallaby,Crescent Nailtail,1956,Feral Cat,5,1
+15,Rufous Hare-wallaby,Rufous Hare-wallaby,1928,Feral Cat,6,1
+16,Eastern Bettong (mainland),Eastern Bettong,1910,Red Fox,7,1
+17,Eastern Hare-wallaby,E. Hare-wallaby,1890,Red Fox,0,2
+18,Banded Hare-wallaby (mainland),Banded Hare-wallaby,1906,Red Fox,1,2
+19,Western Barred Bandicoot (eastern),E. Barred Bandicoot,1900,Red Fox,2,2
+20,Marl Western Barred Bandicoot,W. Barred Bandicoot,1910,Red Fox,3,2
+21,South-eastern Striped Bandicoot,SE Striped Bandicoot,1940,Red Fox,4,2
+22,White-footed Rabbit-rat,Rabbit-rat,1875,Black Rat,5,2
+23,Capricorn Rabbit-rat,Capricorn Rabbit-rat,1900,Black Rat,6,2
+24,Short-tailed Hopping-mouse,Short-tailed Hopper,1894,Black Rat,7,2
+25,Long-tailed Hopping-mouse,Long-tailed Hopper,1901,Black Rat,0,3
+26,Large-eared Hopping-mouse,Large-eared Hopper,1843,Black Rat,1,3
+27,Darling Downs Hopping-mouse,Darling Downs Hopper,1846,Black Rat,2,3
+28,Broad-cheeked Hopping-mouse,Broad-cheeked Hopper,1850,Black Rat,3,3
+29,Lord Howe Long-eared Bat,Lord Howe Bat,1920,Black Rat,4,3
+30,Broad-faced Potoroo,Broad-faced Potoroo,1875,Black Rat,5,3
+31,Long-eared Mouse,Long-eared Mouse,1901,Black Rat,6,3
+32,Gould's Mouse,Gould's Mouse,1857,Black Rat,7,3
+33,Maclear's Rat,Maclear's Rat,1903,Black Rat,0,4
+34,Bulldog Rat,Bulldog Rat,1903,Black Rat,1,4
+35,Thylacine,Thylacine,1936,Hunting,2,4
+36,Toolache Wallaby,Toolache Wallaby,1939,Hunting,3,4
+37,Percy Island Flying-fox,Percy Is. Flying-fox,1874,Hunting,4,4
+38,Bramble Cay Melomys,Bramble Cay Melomys,2016,Habitat Loss,5,4
+39,Christmas Island Pipistrelle,Christmas Is. Pip.,2009,Habitat Loss,6,4
